@@ -2,9 +2,9 @@
     "gcp": {
         "vicent": {
             "sql": {
-                "ip": "35.236.138.208",
-                "user": "postgres",
-                "pd": "n6gdpxtAhpKGwdeG"
+                "ip": "35.221.253.88",
+                "user": "root",
+                "pd": "xzbrMKnybuhuNM6D"
             },
             "app": {
                 "ip": "34.92.191.134"
