@@ -1,5 +1,5 @@
 # Project overview
-## managerment
+## Managerment
 CMake
 - app
 - lib1
@@ -18,10 +18,18 @@ Cpp
 
 [online discuss](https://docs.google.com/document/d/1v2jsXLpF7iKs91sIN9Z-M3vjNxYJjjfaGAXDTr3JBIs/edit?usp=sharing "online google document for discuss")
 
-## function distribute
+## Function distribute
 - app
 
     main function, service entry
+
+- parse
+
+    parse input data from user input through input
+
+- analysis
+
+    analysis user input
 
 - database access
 
@@ -29,4 +37,40 @@ Cpp
     - each kind of datanae impletemnt the interface
     - libdba, DataBaseAcces
 
-- 
+- libquery
+
+    convert user query to sql query command
+
+- libdatagenerator
+
+    construct data for client's query
+
+- libhttp
+
+    find a open-source http lib
+
+- libimport*
+
+    import data from database
+
+- libclean*
+
+    clean data imported from database
+
+- libexplore*
+
+    explore analysis data from data base
+
+- libanalysis*
+
+    in-depth analysis of data from database
+
+- libmodel*
+
+    create model from database
+
+- librepresent*
+
+    create representation for data.
+
+library name with * is tempory, may delete in later versions, don't rely on this.
