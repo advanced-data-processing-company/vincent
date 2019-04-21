@@ -9,6 +9,8 @@ CMake
 
 ## Code style
 google style, cppcheck, clang-formt
+
+.clang format copy from[.clang-format](https://github.com/google/jsonnet/blob/master/.clang-format "google/jsonnet/.clang-format")
 ## Comment
 doxygen
 ## Languange
