@@ -14,6 +14,9 @@ doxygen
 ## Languange
 Cpp
 
+## Protocol
+Protobuf will be used for internal usage
+
 ## Data flow
 
 [online discuss](https://docs.google.com/document/d/1v2jsXLpF7iKs91sIN9Z-M3vjNxYJjjfaGAXDTr3JBIs/edit?usp=sharing "online google document for discuss")
