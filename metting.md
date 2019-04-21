@@ -1,5 +1,5 @@
 # Meeting
-## 01.05.2019
+## 18:00:00 01.05.2019
 ### Keyword
 - CMake 
 - clang-format
