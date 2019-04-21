@@ -16,7 +16,7 @@ Cpp
 
 ## Data flow
 
-
+[online discuss](https://docs.google.com/document/d/1v2jsXLpF7iKs91sIN9Z-M3vjNxYJjjfaGAXDTr3JBIs/edit "online google document for discuss")
 
 ## function distribute
 - app
