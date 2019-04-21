@@ -26,6 +26,10 @@ Protobuf will be used for internal usage
 
     main function, service entry
 
+- liblog
+
+    log library spdlog, glog...
+
 - parse
 
     parse input data from user input through input
