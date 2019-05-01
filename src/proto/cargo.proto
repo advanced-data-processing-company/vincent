@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message PortoCargo {
+  uint64 id = 1;
+  string name = 2;
+  string description = 3;
+  uint64 prodece_area = 4;
+  double price = 5;
+  uint64 unit = 6;
+  string relative_person = 7;
+  string relative_geo_position = 8;
+}
