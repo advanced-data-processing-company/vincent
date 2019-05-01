@@ -7,3 +7,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -g -Wall -Werror -Wpedan
 set(COMMON_LIB dl pthread)
 
 add_subdirectory(app)
+add_subdirectory(proto)
