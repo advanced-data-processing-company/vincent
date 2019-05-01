@@ -72,6 +72,10 @@ issue or feature number
 ### Config git to use `commit.template`
 `git config --global commit.template ./.gitcommitstyle.txt`
 
+### Reference
+- [karam git commit style](http://karma-runner.github.io/4.0/dev/git-commit-msg.html)
+- [git config](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
+
 
 
 
