@@ -14,6 +14,9 @@
 #include "build/proto/cargo.pb.h"
 #include "proto/cargo.pb.h"
 
+/**
+ * @brief test for protobuf converto json
+ */
 TEST(json, to_json)
 {
     // set proto data
@@ -36,6 +39,9 @@ TEST(json, to_json)
     }
 }
 
+/**
+ * @brief test for protobuf parse from json
+ */
 TEST(json, from_json)
 {
     PortoCargo proto_test;
