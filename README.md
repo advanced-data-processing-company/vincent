@@ -1,21 +1,21 @@
-# vincent
+# Vincent
 
 medical manage system
 
-## sql design
+## Sql design
 
-- online
+- Online
 
     [sql design google document](https://docs.google.com/document/d/1QlFliN9hr0bRWUpu1whWGgTl2qbUMroOrxDV7gtdL20/edit "google document for sql design")
 
-- offline
+- Offline
 
     see [sql_table_design](https://htmlpreview.github.io/?https://github.com/advanced-data-processing-company/vincent/blob/master/sql_table_design.html "sql_table_design.html") if you can't access the online version.Note that this document may be late than online version.
-## source structure
+## Source structure
 
 All source files are in `src` directory, each module has its own sub-directory in `src`
 
-## compile
+## Build
  1. `cd src`
  2. `mkdir build && cd build`
  3. `cmake ..`
@@ -60,7 +60,7 @@ The first line cannot be longer than 70 characters, the second line is always bl
 Generally `<scope>` value should be  the module name, such as `app`
 
 #### \<subject>
-Briefly concludes mofifications
+Briefly concludes modifications
 
 ### Message body
 - uses the imperative, present tense: “change” not “changed” nor “changes”
@@ -76,6 +76,32 @@ issue or feature number
 - [karam git commit style](http://karma-runner.github.io/4.0/dev/git-commit-msg.html)
 - [git config](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
+## Unit test
+every library should has a executable to do test, test excutable name should end with library name plus `_test`
+
+take `proto` for example, its test executable is `proto_test`,when built you can run test with
+```
+cd build
+proto/proto_test
+```
+**Don't** forget to add `target_link_libraries(xxx_test gtest)` to your `CMakeLists.txt` to link `gtest`
+
+and it should give something like
+```
+Running main() from /home/thy/Documents/vincent/src/3rdparty/src/gtest_main.cc
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from json
+[ RUN      ] json.to_json
+[       OK ] json.to_json (0 ms)
+[ RUN      ] json.from_json
+[       OK ] json.from_json (0 ms)
+[----------] 2 tests from json (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran. (0 ms total)
+[  PASSED  ] 2 tests.
+```
 
 
 
