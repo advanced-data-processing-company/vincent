@@ -16,12 +16,16 @@ medical manage system
 All source files are in `src` directory, each module has its own sub-directory in `src`
 
 ## Build
- 1. `cd src`
+ 1. `cd ${VINCENT_ROOT_PATH}`
  2. `mkdir build && cd build`
  3. `cmake ..`
  4. `make`
 
  - **DONT** build in `src` directory
+ - If you dont want to build `doxygen docs` call cmake with
+    ```
+    cmake -DBUILD_DOC=OFF ..
+    ```
 
  ## Git commit message
  ### Reasons for these conventions
@@ -82,7 +86,7 @@ every library should has a executable to do test, test excutable name should end
 take `proto` for example, its test executable is `proto_test`,when built you can run test with
 ```
 cd build
-proto/proto_test
+bin/proto_test
 ```
 **Don't** forget to add `target_link_libraries(xxx_test gtest)` to your `CMakeLists.txt` to link `gtest`
 
