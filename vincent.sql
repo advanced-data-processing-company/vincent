@@ -1,9 +1,3 @@
--- --------------------------------------------------------
--- 主机:                           127.0.0.1
--- Server version:               5.7.21-log - MySQL Community Server (GPL)
--- Server OS:                    Win32
--- HeidiSQL 版本:                  10.1.0.5464
--- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
