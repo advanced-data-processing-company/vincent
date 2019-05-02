@@ -1,0 +1,80 @@
+\subsection*{Managerment}
+
+C\+Make
+\begin{DoxyItemize}
+\item app
+\item lib1
+\item lib2
+\item ...
+\end{DoxyItemize}
+
+\subsection*{Code style}
+
+google style, cppcheck, clang-\/formt
+
+.clang format copy from\href{https://github.com/google/jsonnet/blob/master/.clang-format}{\tt .clang-\/format} \subsection*{Comment}
+
+doxygen \subsection*{Languange}
+
+Cpp
+
+\subsection*{Protocol}
+
+Protobuf will be used for internal usage
+
+\subsection*{Data flow}
+
+\href{https://docs.google.com/document/d/1v2jsXLpF7iKs91sIN9Z-M3vjNxYJjjfaGAXDTr3JBIs/edit?usp=sharing}{\tt online discuss}
+
+\subsection*{Function distribute}
+
+
+\begin{DoxyItemize}
+\item app
+
+main function, service entry
+\item liblog
+
+log library spdlog, glog...
+\item parse
+
+parse input data from user input through input
+\item analysis
+
+analysis user input
+\item database access
+\begin{DoxyItemize}
+\item abstract interface
+\item each kind of datanae impletemnt the interface
+\item libdba, Data\+Base\+Acces
+\end{DoxyItemize}
+\item libquery
+
+convert user query to sql query command
+\item libdatagenerator
+
+construct data for client\textquotesingle{}s query
+\item libhttp
+
+find a open-\/source http lib
+\item libimport$\ast$
+
+import data from database
+\item libclean$\ast$
+
+clean data imported from database
+\item libexplore$\ast$
+
+explore analysis data from data base
+\item libanalysis$\ast$
+
+in-\/depth analysis of data from database
+\item libmodel$\ast$
+
+create model from database
+\item librepresent$\ast$
+
+create representation for data.
+\end{DoxyItemize}
+
+library name with $\ast$ is tempory, may delete in later versions, don\textquotesingle{}t rely on this. 
