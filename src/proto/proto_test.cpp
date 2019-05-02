@@ -11,8 +11,8 @@
 
 #include <google/protobuf/util/json_util.h>  // for json process
 #include "3rdparty/gtest/gtest.h"
-#include "build/proto/cargo.pb.h"
-#include "proto/cargo.pb.h"
+#include "build/src/proto/cargo.pb.h"
+#include "build/src/proto/cargo.pb.h"
 
 /**
  * @brief test for protobuf converto json
