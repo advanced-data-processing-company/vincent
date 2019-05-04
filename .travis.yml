@@ -23,7 +23,7 @@ install:
   - ls -al
   - mkdir proto && tar --strip-components=1 -zxf proto.tar.gz -C proto
   - ls -al ./proto
-  - pushd proto && ./configure --prefix=/usr && make -jnolimit && sudo make install && popd
+  - pushd proto && ./configure --prefix=/usr && make -j4 && sudo make install && popd
   - protoc --version
 
 # Build steps
