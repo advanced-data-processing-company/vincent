@@ -21,6 +21,10 @@ install:
       mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
       export PATH=${DEPS_DIR}/cmake/bin:${PATH}
     fi
+
+  - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz
+  - tar -xzvf protobuf-cpp-3.7.1.tar.gz
+  - pushd protobuf-3.7.1 && ./configure --prefix=/usr && make && sudo make install && popd
   
   # Go to the Root directory  
   - cd ..
