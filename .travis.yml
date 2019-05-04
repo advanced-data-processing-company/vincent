@@ -19,7 +19,7 @@ install:
 
 # install a newer protobuf
   - pwd
-  - curl https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz --output proto.tar.gz
+  - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz -O proto.tar.gz
   - ls -al
   - mkdir proto && tar --strip-components=1 -zxf proto.tar.gz -C proto
   - ls -al ./proto
