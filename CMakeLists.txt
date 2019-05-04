@@ -22,9 +22,9 @@ set(CMAKE_CXX_FLAGS_DEBUG   "-g ${CMAKE_CXX_FLAGS}")
 set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${CMAKE_CXX_FLAGS}")
 
 # print compile flags
-if(${CMAKE_BUILD_TYPE} STREQUAL Debug)
+if("${CMAKE_BUILD_TYPE}" STREQUAL Debug)
   message("debug compile flags: ${CMAKE_CXX_FLAGS_DEBUG}")
-elseif(${CMAKE_BUILD_TYPE} STREQUAL Release)
+elseif("${CMAKE_BUILD_TYPE}" STREQUAL Release)
   message("release compile flags: ${CMAKE_CXX_FLAGS_RELEASE}")
 else()
   message("common compile flags: ${CMAKE_CXX_FLAGS}")
