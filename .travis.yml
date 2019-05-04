@@ -9,9 +9,9 @@ compiler:
   - gcc
 
 install:
-# create build directory
-- lsb_release -a # os version
-- mkdir build && cd build
+  # create build directory
+  - lsb_release -a # os version
+  - mkdir build && cd build
 
 # install a newer version cmake
   - pwd
