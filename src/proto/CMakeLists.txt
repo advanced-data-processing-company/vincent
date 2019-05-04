@@ -19,6 +19,7 @@ add_library(proto ${PROTO_HEADER} ${PROTO_SRC})
 
 # add test executable
 add_executable(proto_test ${test_src})
+add_test(proto ${EXECUTABLE_OUTPUT_PATH}/proto_test)
 
 # link to libproto
 target_link_libraries(proto_test proto protobuf gtest)

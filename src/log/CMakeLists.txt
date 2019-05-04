@@ -11,5 +11,7 @@ add_library(log ${LOG_SRC})
 # add test executable
 add_executable(log_test ${LOG_TEST_SRC})
 
+add_test(log ${EXECUTABLE_OUTPUT_PATH}/log_test)
+
 # link to lib
 target_link_libraries(log_test log gtest)

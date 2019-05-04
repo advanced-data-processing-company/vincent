@@ -107,5 +107,18 @@ Running main() from /home/thy/Documents/vincent/src/3rdparty/src/gtest_main.cc
 [  PASSED  ] 2 tests.
 ```
 
+`make && make test`
 
+```
+Running tests...
+/usr/bin/ctest --force-new-ctest-process 
+Test project /home/thy/Documents/vincent/build
+    Start 1: proto
+1/2 Test #1: proto ............................   Passed    0.00 sec
+    Start 2: log
+2/2 Test #2: log ..............................   Passed    0.00 sec
 
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.01 sec
+```

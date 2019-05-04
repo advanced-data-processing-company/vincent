@@ -56,5 +56,10 @@ else (DOXYGEN_FOUND)
   message("Doxygen need to be installed to generate the doxygen documentation")
 endif (DOXYGEN_FOUND)
 
+# enable CTest
+include(CTest)
+enable_testing()
+
+# add app and lib
 add_subdirectory(src)
 
