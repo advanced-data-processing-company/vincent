@@ -10,7 +10,6 @@ compiler:
 
 install:
   # create build directory
-  - lsb_release -a # os version
   - mkdir build && cd build
 
 # install a newer protobuf
@@ -24,4 +23,4 @@ install:
 
 # Build steps
 script:
-  - ./cmake/bin/cmake .. && make && make test
+  - cmake .. && make && make test
