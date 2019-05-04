@@ -34,4 +34,4 @@ script:
   - find /usr -name 'libprotobuf.*'
   - mkdir build
   - cd build
-  - ${DEPS_DIR}/cmake/bin/cmake .. && make
+  - ${DEPS_DIR}/cmake/bin/cmake .. && make && make test
