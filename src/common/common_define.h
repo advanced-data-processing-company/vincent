@@ -19,12 +19,14 @@
  */
 #if (__cplusplus >= 201703L)  // since c++17
 #    define ADPC_UNUSED [[maybe_unused]]
-#elif (__cplusplus >= 201112L)  // since c++11
-#    define ADPC_UNUSED [[gnu::unused]]
 #elif (__GNUC__)
-define ADPC_UNUSED __attribute__((unused))
+#    if (__cplusplus >= 201112L)  // since c++11
+#        define ADPC_UNUSED [[gnu::unused]]
+#    else
+#        define ADPC_UNUSED __attribute__((unused))
+#    endif
 #elif
-#    define ADPC_UNUSED
+#    define ADPC_UNUSED  // not defined
 #endif
 
 /**
@@ -33,11 +35,13 @@ define ADPC_UNUSED __attribute__((unused))
  *
  */
 #if (__cplusplus >= 201402L)  // since c++14
-#    define ADPC_DEPRECATED(msg) [[deprecated(#    msg)]]
+// clang-format off
+#    define ADPC_DEPRECATED(msg) [[deprecated(#msg)]]
+// clang-format on
 #elif (__GNUC__)
 #    define ADPC_DEPRECATED(msg) __attribute__((deprecated))
 #else
-#    define ADPC_DEPRECATED(msg)
+#    define ADPC_DEPRECATED(msg)  // not defined
 #endif
 
 /**
@@ -49,7 +53,7 @@ define ADPC_UNUSED __attribute__((unused))
 #elif (__GNUC__)
 #    define ADPC_LIKELY(exp) __builtin_expect((exp), 1)
 #else
-#    define ADPC_LIKELY(exp)
+#    define ADPC_LIKELY(exp)  // not defined
 #endif
 
 /**
@@ -61,14 +65,20 @@ define ADPC_UNUSED __attribute__((unused))
 #elif (__GNUC__)
 #    define ADPC_UNLIKELY(exp) __builtin_expect((exp), 0)
 #else
-#    define ADPC_UNLIKELY(exp)
+#    define ADPC_UNLIKELY(exp)  // not defined
 #endif
 
+/**
+ * @brief assertation
+ *
+ */
 #ifndef NDEBUG
-#    include <assert.h>
+#    if (__GNUC__)
+#        include <assert.h>
 // clang-format off
-#    define ADPC_ASSERT(condition, msg) assert(condition && msg)
+#        define ADPC_ASSERT(condition, msg) assert(condition && msg)
 // clang-format on
-#else
-#    define ADPC_ASSERT(condition, msg)
+#    else
+#        define ADPC_ASSERT(condition, msg)
+#    endif
 #endif
