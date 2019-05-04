@@ -4,13 +4,13 @@ install:
 - mkdir build && cd build
 
 # install a newer protobuf
-  - pwd
-  - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz -O proto.tar.gz
-  - ls -al
-  - mkdir proto && tar --strip-components=1 -zxf proto.tar.gz -C proto
-  - ls -al ./proto
-  - pushd proto && ./configure --prefix=/usr && make -j4 && sudo make install && popd
-  - protoc --version
+- pwd
+- wget https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz -O proto.tar.gz
+- ls -al
+- mkdir proto && tar --strip-components=1 -zxf proto.tar.gz -C proto
+- ls -al ./proto
+- pushd proto && ./configure --prefix=/usr && make -j4 && sudo make install && popd
+- protoc --version
 
 build_script:
 - cmake .. && make && make test
