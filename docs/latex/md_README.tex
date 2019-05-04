@@ -18,13 +18,14 @@ All source files are in {\ttfamily src} directory, each module has its own sub-\
 
 
 \begin{DoxyEnumerate}
-\item {\ttfamily cd src}
+\item {\ttfamily cd \$\{V\+I\+N\+C\+E\+N\+T\+\_\+\+R\+O\+O\+T\+\_\+\+P\+A\+TH\}}
 \item {\ttfamily mkdir build \&\& cd build}
 \item {\ttfamily cmake ..}
 \item {\ttfamily make}
 \end{DoxyEnumerate}
 \begin{DoxyItemize}
 \item {\bfseries D\+O\+NT} build in {\ttfamily src} directory
+\item If you dont want to build {\ttfamily doxygen docs} call cmake with ``` cmake -\/\+D\+B\+U\+I\+L\+D\+\_\+\+D\+OC=O\+FF .. ```
 \end{DoxyItemize}
 
 \subsection*{Git commit message}
@@ -107,7 +108,7 @@ every library should has a executable to do test, test excutable name should end
 take {\ttfamily proto} for example, its test executable is {\ttfamily proto\+\_\+test},when built you can run test with 
 \begin{DoxyCode}
 cd build
-proto/proto\_test
+bin/proto\_test
 \end{DoxyCode}
  {\bfseries Don\textquotesingle{}t} forget to add {\ttfamily target\+\_\+link\+\_\+libraries(xxx\+\_\+test gtest)} to your {\ttfamily C\+Make\+Lists.\+txt} to link {\ttfamily gtest}
 

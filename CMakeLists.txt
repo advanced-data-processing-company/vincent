@@ -2,6 +2,37 @@ cmake_minimum_required(VERSION 3.10)
 
 project(vincent)
 
+# warning flags
+# all warning message specified here will not be allowed in code
+set(WARNING "-Wall -Werror -Wpedantic -Wextra -Wconversion")
+
+# c++ version
+set(CXX_VERSION "-std=c++17")
+
+# other common compile falgs
+set(OTHER_COMPILE_FLAGS "-fexceptions")
+
+# common c++ compile flags
+set(CMAKE_CXX_FLAGS "${WARNING} ${OTHER_COMPILE_FLAGS} ${CXX_VERSION}")
+
+# debug compile flags
+set(CMAKE_CXX_FLAGS_DEBUG   "-g ${CMAKE_CXX_FLAGS}")
+
+# release compile flags
+set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${CMAKE_CXX_FLAGS}")
+
+# print compile flags
+if(${CMAKE_BUILD_TYPE} STREQUAL Debug)
+  message("debug compile flags: ${CMAKE_CXX_FLAGS_DEBUG}")
+elseif(${CMAKE_BUILD_TYPE} STREQUAL Release)
+  message("release compile flags: ${CMAKE_CXX_FLAGS_RELEASE}")
+else()
+  message("common compile flags: ${CMAKE_CXX_FLAGS}")
+endif()
+
+# make sure `make` can print verbose compile info
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
 # first we can indicate the documentation build as an option and set it to ON by default
 option(BUILD_DOC "Build documentation" ON)
 

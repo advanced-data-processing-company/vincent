@@ -1,5 +1,3 @@
-project(app)
-
 file(GLOB src 
 "*.cpp"
 "*.h")

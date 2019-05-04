@@ -21,7 +21,7 @@ TEST(json, to_json)
 {
     // set proto data
     PortoCargo proto_test;
-    proto_test.set_id(1);
+    proto_test.set_id(1u);
     proto_test.set_name("michael");
     proto_test.set_description("test");
 
@@ -35,7 +35,7 @@ TEST(json, to_json)
         google::protobuf::util::Status::OK) {
         GTEST_FAIL();
     } else {
-        GTEST_ASSERT_GT(out.length(), 0);
+        GTEST_ASSERT_GT(out.length(), 0u);
     }
 }
 
@@ -61,7 +61,7 @@ TEST(json, from_json)
     if (google::protobuf::util::JsonStringToMessage(json, &proto_test) !=
         google::protobuf::util::Status::OK) {
     } else {
-        GTEST_ASSERT_EQ(proto_test.id(), 1);
+        GTEST_ASSERT_EQ(proto_test.id(), 1u);
         GTEST_ASSERT_EQ(proto_test.name(), std::string("michael"));
         GTEST_ASSERT_EQ(proto_test.price(), 0.1);
     }

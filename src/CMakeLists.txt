@@ -1,6 +1,3 @@
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -Wall -Werror -Wpedantic -Wextra -ffexceptions -std=c++11")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -g -Wall -Werror -Wpedantic -Wextra -ffexceptions -std=c++11")
-
 # common library
 link_libraries(dl pthread)
 

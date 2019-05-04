@@ -75,13 +75,14 @@ $(function() {
 <p>All source files are in <code>src</code> directory, each module has its own sub-directory in <code>src</code></p>
 <h2>Build</h2>
 <ol type="1">
-<li><code>cd src</code></li>
+<li><code>cd ${VINCENT_ROOT_PATH}</code></li>
 <li><code>mkdir build &amp;&amp; cd build</code></li>
 <li><code>cmake ..</code></li>
 <li><code>make</code></li>
 </ol>
 <ul>
 <li><b>DONT</b> build in <code>src</code> directory</li>
+<li>If you dont want to build <code>doxygen docs</code> call cmake with ``` cmake -DBUILD_DOC=OFF .. ```</li>
 </ul>
 <h2>Git commit message</h2>
 <h3>Reasons for these conventions</h3>
@@ -120,7 +121,7 @@ $(function() {
 </ul>
 <h2>Unit test</h2>
 <p>every library should has a executable to do test, test excutable name should end with library name plus <code>_test</code></p>
-<p>take <code>proto</code> for example, its test executable is <code>proto_test</code>,when built you can run test with </p><div class="fragment"><div class="line">cd build</div><div class="line">proto/proto_test</div></div><!-- fragment --><p> <b>Don't</b> forget to add <code>target_link_libraries(xxx_test gtest)</code> to your <code>CMakeLists.txt</code> to link <code>gtest</code></p>
+<p>take <code>proto</code> for example, its test executable is <code>proto_test</code>,when built you can run test with </p><div class="fragment"><div class="line">cd build</div><div class="line">bin/proto_test</div></div><!-- fragment --><p> <b>Don't</b> forget to add <code>target_link_libraries(xxx_test gtest)</code> to your <code>CMakeLists.txt</code> to link <code>gtest</code></p>
 <p>and it should give something like </p><div class="fragment"><div class="line">Running main() from /home/thy/Documents/vincent/src/3rdparty/src/gtest_main.cc</div><div class="line">[==========] Running 2 tests from 1 test case.</div><div class="line">[----------] Global test environment set-up.</div><div class="line">[----------] 2 tests from json</div><div class="line">[ RUN      ] json.to_json</div><div class="line">[       OK ] json.to_json (0 ms)</div><div class="line">[ RUN      ] json.from_json</div><div class="line">[       OK ] json.from_json (0 ms)</div><div class="line">[----------] 2 tests from json (0 ms total)</div><div class="line"></div><div class="line">[----------] Global test environment tear-down</div><div class="line">[==========] 2 tests from 1 test case ran. (0 ms total)</div><div class="line">[  PASSED  ] 2 tests.</div></div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
