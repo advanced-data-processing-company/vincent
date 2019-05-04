@@ -10,13 +10,19 @@ compiler:
 
 install:
 # install a newer version cmake
+  - pwd
   - curl https://cmake.org/files/v3.14/cmake-3.14.0-Linux-x86_64.tar.gz --output cmake.tar.gz
+  - ls -al
   - mkdir cmake && tar --strip-components=1 -zxf cmake.tar.gz -C cmake
+  - ls -al ./cmake
   - ./cmake/bin/cmake --version
 
 # install a newer protobuf
+  - pwd
   - curl https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz --output proto.tar.gz
+  - ls -al
   - mkdir proto && tar --strip-components=1 -zxf proto.tar.gz -C proto
+  - ls -al ./proto
   - pushd proto && ./configure --prefix=/usr && make -jnolimit && sudo make install && popd
   - protoc --version
 
