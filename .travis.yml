@@ -8,30 +8,20 @@ language: cpp
 compiler:
   - gcc
 
-# install a newer version cmake
 install:
-  - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
-  - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
-  
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
-      CMAKE_URL="https://cmake.org/files/v3.14/cmake-3.14.0-Linux-x86_64.tar.gz"
-      mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
-      export PATH=${DEPS_DIR}/cmake/bin:${PATH}
-    fi
+# install a newer version cmake
+  - curl https://cmake.org/files/v3.14/cmake-3.14.0-Linux-x86_64.tar.gz --output cmake.tar.gz
+  - mkdir cmake && tar --strip-components=1 -zxf cmake.tar.gz -C cmake
+  - ./cmake/bin/cmake --version
 
-  - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz
-  - tar -xzvf protobuf-cpp-3.7.1.tar.gz
-  - pushd protobuf-3.7.1 && ./configure --prefix=/usr && make && sudo make install && popd
-  
-  # Go to the Root directory  
-  - cd ..
+# install a newer protobuf
+  - curl https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz --output proto.tar.gz
+  - mkdir proto && tar --strip-components=1 -zxf proto.tar.gz -C proto
+  - pushd proto && ./configure --prefix=/usr && make -jnolimit && sudo make install && popd
+  - protoc --version
 
 # Build steps
 script:
   - lsb_release -a # os version
-  - protoc --version
-  - find /usr -name 'libprotobuf.*'
-  - mkdir build
-  - cd build
-  - ${DEPS_DIR}/cmake/bin/cmake .. && make && make test
+  - mkdir build && cd build
+  - ./cmake/bin/cmake .. && make && make test
