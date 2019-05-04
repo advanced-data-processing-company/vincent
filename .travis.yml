@@ -1,7 +1,5 @@
 sudo: required
 dist: xenial
-before_install:
-  - sudo apt-get install -y libprotobuf-dev protobuf-compiler
   
 # Enable C++ support
 language: cpp
@@ -32,9 +30,8 @@ install:
 # Build steps
 script:
   - lsb_release -a # os version
-  - apt search protobuf
   - protoc --version
-  - find /usr/ -iname 'protoc'
+  - find /usr -name 'libprotobuf.*'
   - mkdir build
   - cd build
   - ${DEPS_DIR}/cmake/bin/cmake .. && make
