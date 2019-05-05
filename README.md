@@ -1,6 +1,10 @@
 # Vincent
 
-medical manage system.[![Build Status](https://travis-ci.org/advanced-data-processing-company/vincent.svg?branch=master)](https://travis-ci.org/advanced-data-processing-company/vincent)&nbsp;[![Build status](https://ci.appveyor.com/api/projects/status/f69xmttanl5kc00m?svg=true)](https://ci.appveyor.com/project/maidamai0/vincent)
+medical manage system.
+[![Build Status](https://travis-ci.org/advanced-data-processing-company/vincent.svg?branch=master)](https://travis-ci.org/advanced-data-processing-company/vincent)
+[![Build status](https://ci.appveyor.com/api/projects/status/f69xmttanl5kc00m?svg=true)](https://ci.appveyor.com/project/maidamai0/vincent)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/advanced-data-processing-company/vincent.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/advanced-data-processing-company/vincent/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/advanced-data-processing-company/vincent.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/advanced-data-processing-company/vincent/context:javascript)
 
 ## Sql design
 
