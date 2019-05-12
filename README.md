@@ -1,6 +1,11 @@
 # Vincent
 
-medical manage system.[![Build Status](https://travis-ci.org/advanced-data-processing-company/vincent.svg?branch=master)](https://travis-ci.org/advanced-data-processing-company/vincent)&nbsp;[![Build status](https://ci.appveyor.com/api/projects/status/f69xmttanl5kc00m?svg=true)](https://ci.appveyor.com/project/maidamai0/vincent)
+medical manage system.
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f8330fe0345f407ca619af7015d3500a)](https://app.codacy.com/app/maidamai0/vincent?utm_source=github.com&utm_medium=referral&utm_content=advanced-data-processing-company/vincent&utm_campaign=Badge_Grade_Settings)
+[![Build Status](https://travis-ci.org/advanced-data-processing-company/vincent.svg?branch=master)](https://travis-ci.org/advanced-data-processing-company/vincent)
+[![Build status](https://ci.appveyor.com/api/projects/status/f69xmttanl5kc00m?svg=true)](https://ci.appveyor.com/project/maidamai0/vincent)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/advanced-data-processing-company/vincent.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/advanced-data-processing-company/vincent/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/advanced-data-processing-company/vincent.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/advanced-data-processing-company/vincent/context:javascript)
 
 ## Sql design
 
