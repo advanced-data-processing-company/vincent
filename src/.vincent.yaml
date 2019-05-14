@@ -1,0 +1,13 @@
+# this is a configuration file of vincent server
+
+# log configuration in MB
+log_file_size:10
+
+# test string
+log_file_base_name:daily_file
+
+# split string
+split_string:
+
+# boolean
+Bool:true

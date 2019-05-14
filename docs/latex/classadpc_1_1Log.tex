@@ -1,0 +1,66 @@
+\hypertarget{classadpc_1_1Log}{}\section{adpc\+:\+:Log Class Reference}
+\label{classadpc_1_1Log}\index{adpc\+::\+Log@{adpc\+::\+Log}}
+
+
+The log class for vincent.  
+
+
+
+
+{\ttfamily \#include $<$log.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}{Set\+Level} (const string \&module\+\_\+name, const Log\+Sink\+Type type, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level)
+\item 
+\mbox{\Hypertarget{classadpc_1_1Log_ae9c832f1a8d5f684308f5ef95d53cf36}\label{classadpc_1_1Log_ae9c832f1a8d5f684308f5ef95d53cf36}} 
+void {\bfseries Enable} (const string \&module\+\_\+name, const Log\+Sink\+Type type, const bool enable)
+\item 
+\mbox{\Hypertarget{classadpc_1_1Log_a599ccdccf8a85ae3779a8f587424cea8}\label{classadpc_1_1Log_a599ccdccf8a85ae3779a8f587424cea8}} 
+void {\bfseries Add\+Module} (string \&\&module\+\_\+name, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level=Log\+Level\+::warn, const bool terminal=true, const bool daily\+\_\+file=true)
+\item 
+\mbox{\Hypertarget{classadpc_1_1Log_ab1def13d51364c2b804b3a143eb71bf9}\label{classadpc_1_1Log_ab1def13d51364c2b804b3a143eb71bf9}} 
+void {\bfseries Init} ()
+\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}{log} (\hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} lvl, const char $\ast$fmt, const Args \&... args)
+\end{DoxyCompactItemize}
+
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classadpc_1_1Log_a0e7b4c16064e3789d935b1b3523d78c7}\label{classadpc_1_1Log_a0e7b4c16064e3789d935b1b3523d78c7}} 
+class {\bfseries adpctl\+::\+Singleton$<$ Log $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The log class for vincent. 
+
+contains one daily file and a color terminal
+
+destination path of log is ./log/ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}\label{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}} 
+\index{adpc\+::\+Log@{adpc\+::\+Log}!log@{log}}
+\index{log@{log}!adpc\+::\+Log@{adpc\+::\+Log}}
+\subsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void adpc\+::\+Log\+::log (\begin{DoxyParamCaption}\item[{\hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level}}]{lvl,  }\item[{const char $\ast$}]{fmt,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+general log function \mbox{\Hypertarget{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}\label{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}} 
+\index{adpc\+::\+Log@{adpc\+::\+Log}!Set\+Level@{Set\+Level}}
+\index{Set\+Level@{Set\+Level}!adpc\+::\+Log@{adpc\+::\+Log}}
+\subsubsection{\texorpdfstring{Set\+Level()}{SetLevel()}}
+{\footnotesize\ttfamily void adpc\+::\+Log\+::\+Set\+Level (\begin{DoxyParamCaption}\item[{const string \&}]{module\+\_\+name,  }\item[{const Log\+Sink\+Type}]{type,  }\item[{const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/log/log.\+h\item 
+src/log/log.\+cpp\end{DoxyCompactItemize}

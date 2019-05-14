@@ -1,0 +1,37 @@
+\hypertarget{namespaceadpctl}{}\section{adpctl Namespace Reference}
+\label{namespaceadpctl}\index{adpctl@{adpctl}}
+
+
+Advanced Data Processing Company Template Library(\+A\+D\+P\+C\+T\+L)  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classadpctl_1_1Singleton}{Singleton}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Advanced Data Processing Company Template Library(\+A\+D\+P\+C\+T\+L) 
+
+adpctl is a template library designed for purpose use \hyperlink{classadpctl_1_1Singleton}{Singleton} template
+
+If you want to make your class a template, you can decalre your default constructor to be {\ttfamily private}, and decalre {\ttfamily \hyperlink{classadpctl_1_1Singleton}{Singleton}$<$T$>$} as frinend.
+
+example\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "adpctl/singleton.h"}
+
+\textcolor{keyword}{class }singleton\_example\{
+
+\textcolor{keyword}{friend} \textcolor{keyword}{class }\hyperlink{classadpctl_1_1Singleton}{adpctl::Singleton}<singleton\_example>
+
+private:
+ singleton\_example()\{\textcolor{comment}{// do something\};}
+\};
+
+
+Singleton<singleton\_example>::GetInstance
+\end{DoxyCode}
+ 

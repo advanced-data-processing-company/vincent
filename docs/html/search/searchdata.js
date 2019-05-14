@@ -1,27 +1,36 @@
 var indexSectionsWithContent =
 {
-  0: "aclmpv",
-  1: "l",
-  2: "cm",
-  3: "a",
-  4: "mpv"
+  0: "acglmopsv",
+  1: "cls",
+  2: "a",
+  3: "clmo",
+  4: "gls",
+  5: "l",
+  6: "a",
+  7: "mpv"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "files",
-  3: "defines",
-  4: "pages"
+  2: "namespaces",
+  3: "files",
+  4: "functions",
+  5: "enums",
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Files",
-  3: "Macros",
-  4: "Pages"
+  2: "Namespaces",
+  3: "Files",
+  4: "Functions",
+  5: "Enumerations",
+  6: "Macros",
+  7: "Pages"
 };
 

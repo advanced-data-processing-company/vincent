@@ -10,15 +10,13 @@
  */
 
 #include <google/protobuf/util/json_util.h>  // for json process
-#include "3rdparty/gtest/gtest.h"
 #include "build/src/proto/cargo.pb.h"
-#include "build/src/proto/cargo.pb.h"
+#include "gtest/gtest.h"
 
 /**
  * @brief test for protobuf converto json
  */
-TEST(json, to_json)
-{
+TEST(json, to_json) {
     // set proto data
     PortoCargo proto_test;
     proto_test.set_id(1u);
@@ -27,7 +25,7 @@ TEST(json, to_json)
 
     // convert to json
     google::protobuf::util::JsonPrintOptions op;
-    op.add_whitespace = true;
+    op.add_whitespace                = true;
     op.always_print_primitive_fields = true;
     std::string out;
 
@@ -42,8 +40,7 @@ TEST(json, to_json)
 /**
  * @brief test for protobuf parse from json
  */
-TEST(json, from_json)
-{
+TEST(json, from_json) {
     PortoCargo proto_test;
 
     // parse from json

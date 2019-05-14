@@ -16,10 +16,10 @@ set(OTHER_COMPILE_FLAGS "-fexceptions")
 set(CMAKE_CXX_FLAGS "${WARNING} ${OTHER_COMPILE_FLAGS} ${CXX_VERSION}")
 
 # debug compile flags
-set(CMAKE_CXX_FLAGS_DEBUG   "-g ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS_DEBUG   "-g -O0 ${CMAKE_CXX_FLAGS}")
 
 # release compile flags
-set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -O2 ${CMAKE_CXX_FLAGS}")
 
 # print compile flags
 if("${CMAKE_BUILD_TYPE}" STREQUAL Debug)

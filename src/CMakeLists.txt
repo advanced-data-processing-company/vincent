@@ -3,6 +3,7 @@ link_libraries(dl pthread)
 
 # add third party include path
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include")
 
 # for build gtest_src
 # TODO(thy):: fix this
@@ -23,9 +24,23 @@ endif()
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
 
+# copy default configuration file
+set(IN_CONIFG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/.vincent.yaml")
+set(OUT_CONFIG_FILE "${CMAKE_BINARY_DIR}/.vincent.yaml")
+configure_file(${IN_CONIFG_FILE} ${OUT_CONFIG_FILE} COPYONLY)
+
+# copy external libraries
+set(EXTERNAL_LIBRARY_PATH "${LIBRARY_OUTPUT_PATH}/3rdparty")
+file(COPY "3rdparty/lib" DESTINATION "${EXTERNAL_LIBRARY_PATH}")
+
+# external library search path
+LINK_DIRECTORIES("${EXTERNAL_LIBRARY_PATH}/lib")
+
 add_subdirectory(app)
 
 # if your executable need gtest just target_link_libraries(xxx_test gtest)
-add_subdirectory(3rdparty/gtest_src)
+add_subdirectory(3rdparty/include/gtest_src)
 add_subdirectory(proto)
 add_subdirectory(log)
+add_subdirectory(config)
+add_subdirectory(common)

@@ -1,5 +1,5 @@
 #include "common/os.h"
-#include "3rdparty/gtest/gtest.h"
+#include "gtest/gtest.h"
 
 using namespace adpc::os;
 

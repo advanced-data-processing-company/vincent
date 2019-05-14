@@ -1,0 +1,101 @@
+\hypertarget{classadpc_1_1Config}{}\section{adpc\+:\+:Config Class Reference}
+\label{classadpc_1_1Config}\index{adpc\+::\+Config@{adpc\+::\+Config}}
+
+
+The \hyperlink{classadpc_1_1Config}{Config} class.  
+
+
+
+
+{\ttfamily \#include $<$config.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classadpc_1_1Config_a2a68eb461b5842d2a36fbcc5efddaab2}\label{classadpc_1_1Config_a2a68eb461b5842d2a36fbcc5efddaab2}} 
+bool {\bfseries Load} ()
+\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classadpc_1_1Config_aeb4893a500149d3ae44614767e496132}{Get\+String} (const string \&section, const string \&key)
+\begin{DoxyCompactList}\small\item\em getter \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{classadpc_1_1Config_a8153d1c7be58fa8ce1a6c768bd65ea94}{Get\+Int} (const string \&section, const string \&key)
+\begin{DoxyCompactList}\small\item\em Get integer value. \end{DoxyCompactList}\item 
+bool \hyperlink{classadpc_1_1Config_a42a33471c732cd4960e5fb3e00e3b433}{Get\+Bool} (const string \&section, const string \&key)
+\begin{DoxyCompactList}\small\item\em Get boolean value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+The \hyperlink{classadpc_1_1Config}{Config} class. 
+
+read config file 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classadpc_1_1Config_a42a33471c732cd4960e5fb3e00e3b433}\label{classadpc_1_1Config_a42a33471c732cd4960e5fb3e00e3b433}} 
+\index{adpc\+::\+Config@{adpc\+::\+Config}!Get\+Bool@{Get\+Bool}}
+\index{Get\+Bool@{Get\+Bool}!adpc\+::\+Config@{adpc\+::\+Config}}
+\subsubsection{\texorpdfstring{Get\+Bool()}{GetBool()}}
+{\footnotesize\ttfamily bool adpc\+::\+Config\+::\+Get\+Bool (\begin{DoxyParamCaption}\item[{const string \&}]{section,  }\item[{const string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Get boolean value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & section name \\
+\hline
+{\em key} & key name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return value or {\ttfamily false} if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classadpc_1_1Config_a8153d1c7be58fa8ce1a6c768bd65ea94}\label{classadpc_1_1Config_a8153d1c7be58fa8ce1a6c768bd65ea94}} 
+\index{adpc\+::\+Config@{adpc\+::\+Config}!Get\+Int@{Get\+Int}}
+\index{Get\+Int@{Get\+Int}!adpc\+::\+Config@{adpc\+::\+Config}}
+\subsubsection{\texorpdfstring{Get\+Int()}{GetInt()}}
+{\footnotesize\ttfamily int64\+\_\+t adpc\+::\+Config\+::\+Get\+Int (\begin{DoxyParamCaption}\item[{const string \&}]{section,  }\item[{const string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Get integer value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & section name \\
+\hline
+{\em key} & key name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return value or {\ttfamily 0} if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classadpc_1_1Config_aeb4893a500149d3ae44614767e496132}\label{classadpc_1_1Config_aeb4893a500149d3ae44614767e496132}} 
+\index{adpc\+::\+Config@{adpc\+::\+Config}!Get\+String@{Get\+String}}
+\index{Get\+String@{Get\+String}!adpc\+::\+Config@{adpc\+::\+Config}}
+\subsubsection{\texorpdfstring{Get\+String()}{GetString()}}
+{\footnotesize\ttfamily string adpc\+::\+Config\+::\+Get\+String (\begin{DoxyParamCaption}\item[{const string \&}]{section,  }\item[{const string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+getter 
+
+get string value 
+\begin{DoxyParams}{Parameters}
+{\em section} & section name \\
+\hline
+{\em key} & key name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return value or empty string if not found 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/config/config.\+h\item 
+src/config/config.\+cpp\end{DoxyCompactItemize}
