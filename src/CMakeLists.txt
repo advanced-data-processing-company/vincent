@@ -38,8 +38,6 @@ LINK_DIRECTORIES("${EXTERNAL_LIBRARY_PATH}/lib")
 
 add_subdirectory(app)
 
-# if your executable need gtest just target_link_libraries(xxx_test gtest)
-add_subdirectory(3rdparty/include/gtest_src)
 add_subdirectory(proto)
 add_subdirectory(log)
 add_subdirectory(config)

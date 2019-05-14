@@ -15,4 +15,4 @@ add_executable(config_test ${CONFIG_TEST_SRC})
 add_test(config ${EXECUTABLE_OUTPUT_PATH}/config_test)
 
 # link to lib
-target_link_libraries(config_test config gtest)
+target_link_libraries(config_test config)

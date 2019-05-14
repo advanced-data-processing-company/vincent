@@ -1,5 +1,6 @@
 #include "config/config.h"
-#include "gtest/gtest.h"
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest/doctest.h"
 
 #include "iostream"
 #include "string"
@@ -8,14 +9,14 @@ using std::cerr;
 using std::endl;
 using std::string;
 
-TEST(config, load_file) {
+TEST_CASE("configuration") {
     if (!CFG.Load()) {
         cerr << "load file failed" << endl;
         return;
     }
 
-    ASSERT_EQ(CFG.GetInt("log", "log_file_size"), 10);
-    ASSERT_EQ(CFG.GetString("log", "log_file_base_name"), string("daily_file"));
-    ASSERT_EQ(CFG.GetString("log", "split_string"), string("hello split"));
-    ASSERT_EQ(CFG.GetBool("log", "Bool"), true);
+    CHECK(CFG.GetInt("log", "log_file_size") == 10);
+    CHECK(CFG.GetString("log", "log_file_base_name") == string("daily_file"));
+    CHECK(CFG.GetString("log", "split_string") == string("hello split"));
+    CHECK(CFG.GetBool("log", "Bool") == true);
 }

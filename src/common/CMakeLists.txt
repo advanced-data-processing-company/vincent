@@ -16,4 +16,4 @@ add_executable(common_test ${TEST_SRC})
 add_test(common ${EXECUTABLE_OUTPUT_PATH}/common_test)
 
 # link to lib
-target_link_libraries(common_test common gtest)
+target_link_libraries(common_test common)

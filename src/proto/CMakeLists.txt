@@ -22,7 +22,7 @@ add_executable(proto_test ${test_src})
 add_test(proto ${EXECUTABLE_OUTPUT_PATH}/proto_test)
 
 # link to libproto
-target_link_libraries(proto_test proto protobuf gtest)
+target_link_libraries(proto_test proto protobuf)
 
 # for #include "build/proto/xxx.pb.h"
 target_include_directories(proto_test PRIVATE "${CMAKE_BINARY_DIR}/../")

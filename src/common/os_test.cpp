@@ -1,14 +1,24 @@
 #include "common/os.h"
-#include "gtest/gtest.h"
+
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest/doctest.h"
 
 using namespace adpc::os;
 
-TEST(common_os, file_exists) {
-    system("touch test");
-    ASSERT_EQ(FileExists("test"), true);
-    system("rm test");
-}
+TEST_CASE("common") {
+    SUBCASE("OS") {
+        SUBCASE("file exsistence") {
+            // exist
+            SUBCASE("file exists") {
+                system("touch test");
+                CHECK(FileExists("test") == true);
+                system("rm test");
+            }
 
-TEST(common_os, file_not_exists) {
-    ASSERT_EQ(FileExists("test"), false);
+            // not exist
+            SUBCASE("file not exist") {
+                CHECK(FileExists("test") == false);
+            }
+        }
+    }
 }
