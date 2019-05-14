@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classadpc_1_1Log-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -86,13 +87,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Enable</b> (const str
 <tr class="memitem:a599ccdccf8a85ae3779a8f587424cea8"><td class="memItemLeft" align="right" valign="top"><a id="a599ccdccf8a85ae3779a8f587424cea8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>AddModule</b> (string &amp;&amp;module_name, const <a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a> level=LogLevel::warn, const bool terminal=true, const bool daily_file=true)</td></tr>
 <tr class="separator:a599ccdccf8a85ae3779a8f587424cea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1def13d51364c2b804b3a143eb71bf9"><td class="memItemLeft" align="right" valign="top"><a id="ab1def13d51364c2b804b3a143eb71bf9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
-<tr class="separator:ab1def13d51364c2b804b3a143eb71bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ae3e21b4038776f15d0b5ebdfebc41f57"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:ae3e21b4038776f15d0b5ebdfebc41f57"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classadpc_1_1Log.html#ae3e21b4038776f15d0b5ebdfebc41f57">log</a> (<a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a> lvl, const char *fmt, const Args &amp;... args)</td></tr>
 <tr class="separator:ae3e21b4038776f15d0b5ebdfebc41f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a41b80ba97a00d128777d22f369bc791f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classadpc_1_1Log.html#a41b80ba97a00d128777d22f369bc791f">InitPath</a> ()</td></tr>
+<tr class="memdesc:a41b80ba97a00d128777d22f369bc791f"><td class="mdescLeft">&#160;</td><td class="mdescRight">create directory if not exist  <a href="#a41b80ba97a00d128777d22f369bc791f">More...</a><br /></td></tr>
+<tr class="separator:a41b80ba97a00d128777d22f369bc791f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -105,6 +109,35 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>adpctl::Singleton&lt
 <p>contains one daily file and a color terminal</p>
 <p>destination path of log is ./log/ </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a41b80ba97a00d128777d22f369bc791f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b80ba97a00d128777d22f369bc791f">&#9670;&nbsp;</a></span>InitPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adpc::Log::InitPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create directory if not exist </p>
+<dl class="section warning"><dt>Warning</dt><dd>call this function before any call to log, or you may crash your program</dd></dl>
+<p>this funtion will always be executed once </p>
+
+</div>
+</div>
 <a id="ae3e21b4038776f15d0b5ebdfebc41f57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3e21b4038776f15d0b5ebdfebc41f57">&#9670;&nbsp;</a></span>log()</h2>
 

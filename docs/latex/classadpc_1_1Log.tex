@@ -19,9 +19,6 @@ void {\bfseries Enable} (const string \&module\+\_\+name, const Log\+Sink\+Type 
 \item 
 \mbox{\Hypertarget{classadpc_1_1Log_a599ccdccf8a85ae3779a8f587424cea8}\label{classadpc_1_1Log_a599ccdccf8a85ae3779a8f587424cea8}} 
 void {\bfseries Add\+Module} (string \&\&module\+\_\+name, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level=Log\+Level\+::warn, const bool terminal=true, const bool daily\+\_\+file=true)
-\item 
-\mbox{\Hypertarget{classadpc_1_1Log_ab1def13d51364c2b804b3a143eb71bf9}\label{classadpc_1_1Log_ab1def13d51364c2b804b3a143eb71bf9}} 
-void {\bfseries Init} ()
 \end{DoxyCompactItemize}
 \textbf{ }\par
 \begin{DoxyCompactItemize}
@@ -29,6 +26,11 @@ void {\bfseries Init} ()
 {\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}{log} (\hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} lvl, const char $\ast$fmt, const Args \&... args)
 \end{DoxyCompactItemize}
 
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classadpc_1_1Log_a41b80ba97a00d128777d22f369bc791f}{Init\+Path} ()
+\begin{DoxyCompactList}\small\item\em create directory if not exist \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,7 +47,20 @@ contains one daily file and a color terminal
 destination path of log is ./log/ 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}\label{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}} 
+\mbox{\Hypertarget{classadpc_1_1Log_a41b80ba97a00d128777d22f369bc791f}\label{classadpc_1_1Log_a41b80ba97a00d128777d22f369bc791f}} 
+\index{adpc\+::\+Log@{adpc\+::\+Log}!Init\+Path@{Init\+Path}}
+\index{Init\+Path@{Init\+Path}!adpc\+::\+Log@{adpc\+::\+Log}}
+\subsubsection{\texorpdfstring{Init\+Path()}{InitPath()}}
+{\footnotesize\ttfamily void adpc\+::\+Log\+::\+Init\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+create directory if not exist 
+
+\begin{DoxyWarning}{Warning}
+call this function before any call to log, or you may crash your program
+\end{DoxyWarning}
+this funtion will always be executed once \mbox{\Hypertarget{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}\label{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}} 
 \index{adpc\+::\+Log@{adpc\+::\+Log}!log@{log}}
 \index{log@{log}!adpc\+::\+Log@{adpc\+::\+Log}}
 \subsubsection{\texorpdfstring{log()}{log()}}

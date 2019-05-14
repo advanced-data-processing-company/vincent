@@ -1,29 +1,25 @@
 #include "log/log.h"
 #include "common/os.h"
 
+#include "mutex"
+
 namespace adpc {
 
 using std::make_shared;
+
+static std::once_flag log_init_path_once_flag;
 
 Log::Log()
     : daily_file_sink_{make_shared<spdlog::sinks::daily_file_sink_mt>("logs/daily", 2, 30, true)},
       terminal_sink_{make_shared<spdlog::sinks::stdout_color_sink_mt>()},
       log_{spdlog::logger("vincent_log", {daily_file_sink_, terminal_sink_})} {}
 
-void Log::Init() {
-    create_log_directory();
-}
-
-void Log::create_log_directory() {
-    bool should_create_folder = false;
-    if (!os::FileExists("./logs")) {
-        system("mkdir logs");
-        should_create_folder = true;
-    }
-
-    if (should_create_folder) {
-        log(critical, "create log directory:{}", "logs");
-    }
+void Log::InitPath() {
+    std::call_once(log_init_path_once_flag, []() -> void {
+        if (!os::FileExists("./logs")) {
+            system("mkdir logs");
+        }
+    });
 }
 
 void Log::SetLevel(const string &module_name, const LogSinkType type, const LogLevel level) {

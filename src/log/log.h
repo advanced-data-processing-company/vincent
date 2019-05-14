@@ -32,6 +32,15 @@ class Log {
 
    public:
     /**
+     * @brief create directory if not exist
+     *
+     * @warning call this function before any call to log, or you may crash your program
+     *
+     * this funtion will always be executed once
+     */
+    static void InitPath();
+
+    /**
      * general log function
      * @{
      */
@@ -82,7 +91,6 @@ class Log {
     inline void Enable(const string &module_name, const LogSinkType type, const bool enable);
     inline void AddModule(string &&module_name, const LogLevel level = LogLevel::warn,
                           const bool terminal = true, const bool daily_file = true);
-    void        Init();
 
    private:
     Log();
@@ -95,7 +103,7 @@ class Log {
     // one logger frontend and two backend
     shared_ptr<spdlog::sinks::daily_file_sink_mt>   daily_file_sink_{nullptr};
     shared_ptr<spdlog::sinks::stdout_color_sink_mt> terminal_sink_{nullptr};
-    //    shared_ptr<spdlog::logger>                      log_{nullptr};
+    //    unique_ptr<spdlog::logger>                      log_{nullptr};
     spdlog::logger log_;
 
     /// module name <-> configuration

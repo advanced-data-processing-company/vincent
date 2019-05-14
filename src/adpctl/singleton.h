@@ -1,8 +1,8 @@
 /**
  * @brief Advanced Data Processing Company Template Library(ADPCTL)
- * 
+ *
  * adpctl is a template library designed for purpose use
- * 
+ *
  */
 
 #pragma once
@@ -36,14 +36,15 @@
 namespace adpctl {
 
 template <typename T>
-class Singleton{
+class Singleton {
     using Type = T;
+    using Ptr  = Type*;
 
    public:
-    static Type& GetInstance(){
+    static Type& GetInstance() {
         static Type instance;
         return instance;
     }
 };
 
-}// namespace adpctl
+}  // namespace adpctl
