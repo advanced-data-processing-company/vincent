@@ -25,8 +25,8 @@ set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
 
 # copy default configuration file
-set(IN_CONIFG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/.vincent.yaml")
-set(OUT_CONFIG_FILE "${CMAKE_BINARY_DIR}/.vincent.yaml")
+set(IN_CONIFG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/.vincent.ini")
+set(OUT_CONFIG_FILE "${CMAKE_BINARY_DIR}/.vincent.ini")
 configure_file(${IN_CONIFG_FILE} ${OUT_CONFIG_FILE} COPYONLY)
 
 # copy external libraries

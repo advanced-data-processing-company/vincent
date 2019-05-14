@@ -12,7 +12,7 @@ using std::endl;
 using std::make_unique;
 
 /// configuration file name
-const static string config_file_name{".vincent.yaml"};
+const static string config_file_name{".vincent.ini"};
 
 /// configuration file path
 /// the first found will be used
@@ -30,7 +30,7 @@ bool Config::Load() {
 
     config_ = make_unique<INIReader>(file);
 
-    if (!config_->ParseError()) {
+    if (config_->ParseError() != 0) {
         cerr << file << " is invalid" << endl;
         return false;
     }
