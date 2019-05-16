@@ -12,7 +12,7 @@ static std::once_flag log_init_path_once_flag;
 Log::Log()
     : daily_file_sink_{make_shared<spdlog::sinks::daily_file_sink_mt>("logs/daily", 2, 30, true)},
       terminal_sink_{make_shared<spdlog::sinks::stdout_color_sink_mt>()},
-      log_{spdlog::logger("vincent_log", {daily_file_sink_, terminal_sink_})} {}
+      log_(spdlog::logger("vincent_log", {daily_file_sink_, terminal_sink_})) {}
 
 void Log::InitPath() {
     std::call_once(log_init_path_once_flag, []() -> void {
