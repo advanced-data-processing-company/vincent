@@ -7,7 +7,7 @@ file(GLOB CONFIG_TEST_SRC
 
 # add library
 add_library(config ${CONFIG_SRC})
-target_link_libraries(config yaml-cpp common)
+target_link_libraries(config common)
 
 # add test executable
 add_executable(config_test ${CONFIG_TEST_SRC})

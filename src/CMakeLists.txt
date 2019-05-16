@@ -5,10 +5,6 @@ link_libraries(dl pthread)
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include")
 
-# for build gtest_src
-# TODO(thy):: fix this
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/3rdparty")
-
 # for proto headers, *.pb.h
 # some IDE willl use different path for building
 set(DEFAULT_BUILD_DIR "${PROJECT_SOURCE_DIR}/build")
@@ -30,8 +26,8 @@ set(OUT_CONFIG_FILE "${CMAKE_BINARY_DIR}/.vincent.ini")
 configure_file(${IN_CONIFG_FILE} ${OUT_CONFIG_FILE} COPYONLY)
 
 # copy external libraries
-set(EXTERNAL_LIBRARY_PATH "${LIBRARY_OUTPUT_PATH}/3rdparty")
-file(COPY "3rdparty/lib" DESTINATION "${EXTERNAL_LIBRARY_PATH}")
+# set(EXTERNAL_LIBRARY_PATH "${LIBRARY_OUTPUT_PATH}/3rdparty")
+# file(COPY "3rdparty/lib" DESTINATION "${EXTERNAL_LIBRARY_PATH}")
 
 # external library search path
 LINK_DIRECTORIES("${EXTERNAL_LIBRARY_PATH}/lib")
