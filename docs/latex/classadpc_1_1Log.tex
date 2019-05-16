@@ -17,13 +17,13 @@ void \hyperlink{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}{Set\+Level} 
 \mbox{\Hypertarget{classadpc_1_1Log_ae9c832f1a8d5f684308f5ef95d53cf36}\label{classadpc_1_1Log_ae9c832f1a8d5f684308f5ef95d53cf36}} 
 void {\bfseries Enable} (const string \&module\+\_\+name, const Log\+Sink\+Type type, const bool enable)
 \item 
-\mbox{\Hypertarget{classadpc_1_1Log_a599ccdccf8a85ae3779a8f587424cea8}\label{classadpc_1_1Log_a599ccdccf8a85ae3779a8f587424cea8}} 
-void {\bfseries Add\+Module} (string \&\&module\+\_\+name, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level=Log\+Level\+::warn, const bool terminal=true, const bool daily\+\_\+file=true)
+\mbox{\Hypertarget{classadpc_1_1Log_aed7af8c9b314244e45a7e359cf0a4c82}\label{classadpc_1_1Log_aed7af8c9b314244e45a7e359cf0a4c82}} 
+size\+\_\+t {\bfseries Add\+Module} (string \&\&module\+\_\+name, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level=Log\+Level\+::warn, const bool terminal=true, const bool daily\+\_\+file=true)
 \end{DoxyCompactItemize}
 \textbf{ }\par
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}{log} (\hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} lvl, const char $\ast$fmt, const Args \&... args)
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classadpc_1_1Log_a52882c51a9e3abd940164ded9a99b897}{log} (size\+\_\+t module, \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} lvl, const char $\ast$fmt, const Args \&... args)
 \end{DoxyCompactItemize}
 
 \subsection*{Static Public Member Functions}
@@ -60,12 +60,12 @@ create directory if not exist
 \begin{DoxyWarning}{Warning}
 call this function before any call to log, or you may crash your program
 \end{DoxyWarning}
-this funtion is guaranteed to be executed once enen if you call multiple times from multi-\/threads \mbox{\Hypertarget{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}\label{classadpc_1_1Log_ae3e21b4038776f15d0b5ebdfebc41f57}} 
+this funtion is guaranteed to be executed once enen if you call multiple times from multi-\/threads \mbox{\Hypertarget{classadpc_1_1Log_a52882c51a9e3abd940164ded9a99b897}\label{classadpc_1_1Log_a52882c51a9e3abd940164ded9a99b897}} 
 \index{adpc\+::\+Log@{adpc\+::\+Log}!log@{log}}
 \index{log@{log}!adpc\+::\+Log@{adpc\+::\+Log}}
 \subsubsection{\texorpdfstring{log()}{log()}}
 {\footnotesize\ttfamily template$<$typename... Args$>$ \\
-void adpc\+::\+Log\+::log (\begin{DoxyParamCaption}\item[{\hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level}}]{lvl,  }\item[{const char $\ast$}]{fmt,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void adpc\+::\+Log\+::log (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{module,  }\item[{\hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level}}]{lvl,  }\item[{const char $\ast$}]{fmt,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 general log function \mbox{\Hypertarget{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}\label{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}} 
 \index{adpc\+::\+Log@{adpc\+::\+Log}!Set\+Level@{Set\+Level}}

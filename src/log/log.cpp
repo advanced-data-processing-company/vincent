@@ -6,14 +6,21 @@
 namespace adpc {
 
 using std::make_shared;
+using std::make_unique;
 
 static std::once_flag log_init_path_once_flag;
+static const string   log_pattern{"[%C-%m-%d %H:%M:%S] [%^%l%$] [%n] [thread %t] %v"};
 
 Log::Log()
     : daily_file_sink_{make_shared<spdlog::sinks::daily_file_sink_mt>("logs/daily", 2, 30, true)},
-      terminal_sink_{make_shared<spdlog::sinks::stdout_color_sink_mt>()},
-      log_("vincent_log", {daily_file_sink_, terminal_sink_}) {
-    log_.set_pattern("[%C-%m-%d %H:%M:%S] [%^%l%$] [thread %t] %v");
+      terminal_sink_{make_shared<spdlog::sinks::stdout_color_sink_mt>()} {
+    using namespace spdlog;
+    logPtr log = make_unique<logger>("global", sinks_init_list{daily_file_sink_, terminal_sink_});
+    log->set_level(level::warn);
+    log->set_pattern(log_pattern.c_str());
+
+    // number 0 is the default/global log
+    logs_.push_back(std::move(log));
 }
 
 void Log::InitPath() {
@@ -58,6 +65,28 @@ LogConfiguration &Log::get_module_config(const string &module_name) {
     auto it = config_.find(module_name);
     assert(it != config_.end());
     return it->second;
+}
+
+size_t Log::AddModule(string &&module_name, const LogLevel level, const bool terminal,
+                      const bool daily_file) {
+    assert(terminal || daily_file);
+    assert(!module_name.empty());
+    unique_ptr<spdlog::logger> log;
+
+    if (terminal && daily_file) {
+        log = std::make_unique<spdlog::logger>(
+            module_name, spdlog::sinks_init_list{daily_file_sink_, terminal_sink_});
+    } else if (terminal) {
+        log = std::make_unique<spdlog::logger>(module_name, terminal_sink_);
+    } else if (daily_file) {
+        log = std::make_unique<spdlog::logger>(module_name, daily_file_sink_);
+    }
+
+    log->set_level(static_cast<spdlog::level::level_enum>(level));
+    log->set_pattern(log_pattern.c_str());
+
+    logs_.push_back(std::move(log));
+    return logs_.size() - 1;
 }
 
 }  // namespace adpc

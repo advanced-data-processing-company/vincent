@@ -7,6 +7,7 @@
 #include <map>
 #include <memory>  // for smart pointer
 #include <string>
+#include <vector>
 
 #include "spdlog/sinks/daily_file_sink.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
@@ -18,6 +19,7 @@ using std::map;
 using std::shared_ptr;
 using std::string;
 using std::unique_ptr;
+using std::vector;
 
 /**
  * @brief The log class for vincent
@@ -46,8 +48,9 @@ class Log {
      * @{
      */
     template <typename... Args>
-    void log(LogLevel lvl, const char *fmt, const Args &... args) {
-        log_.log(static_cast<spdlog::level::level_enum>(lvl), fmt, args...);
+    void log(size_t module, LogLevel lvl, const char *fmt, const Args &... args) {
+        assert(module < logs_.size());
+        logs_[module]->log(static_cast<spdlog::level::level_enum>(lvl), fmt, args...);
     }
 
     //    template <typename... Args>
@@ -90,8 +93,9 @@ class Log {
 
     inline void SetLevel(const string &module_name, const LogSinkType type, const LogLevel level);
     inline void Enable(const string &module_name, const LogSinkType type, const bool enable);
-    inline void AddModule(string &&module_name, const LogLevel level = LogLevel::warn,
-                          const bool terminal = true, const bool daily_file = true);
+
+    size_t AddModule(string &&module_name, const LogLevel level = LogLevel::warn,
+                     const bool terminal = true, const bool daily_file = true);
 
    private:
     Log();
@@ -101,10 +105,12 @@ class Log {
     void              create_log_directory();
 
    private:
+    using logPtr = unique_ptr<spdlog::logger>;
+
     // one logger frontend and two backend
     shared_ptr<spdlog::sinks::daily_file_sink_mt>   daily_file_sink_{nullptr};
     shared_ptr<spdlog::sinks::stdout_color_sink_mt> terminal_sink_{nullptr};
-    spdlog::logger                                  log_;
+    vector<logPtr>                                  logs_;
 
     /// module name <-> configuration
     map<string, LogConfiguration> config_;
