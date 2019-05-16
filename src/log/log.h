@@ -36,7 +36,8 @@ class Log {
      *
      * @warning call this function before any call to log, or you may crash your program
      *
-     * this funtion will always be executed once
+     * this funtion is guaranteed to be executed once enen if you call multiple times from
+     * multi-threads
      */
     static void InitPath();
 
@@ -103,8 +104,7 @@ class Log {
     // one logger frontend and two backend
     shared_ptr<spdlog::sinks::daily_file_sink_mt>   daily_file_sink_{nullptr};
     shared_ptr<spdlog::sinks::stdout_color_sink_mt> terminal_sink_{nullptr};
-    //    unique_ptr<spdlog::logger>                      log_{nullptr};
-    spdlog::logger log_;
+    spdlog::logger                                  log_;
 
     /// module name <-> configuration
     map<string, LogConfiguration> config_;

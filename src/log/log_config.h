@@ -40,6 +40,7 @@ class LogConfiguration {
     bool     daily_file_enabled_{true};
     LogLevel daily_file_level_{info};
     LogLevel terminal_level_{warn};
+    size_t   id_{0};  // 0 for invalid
 };
 
 }  // namespace adpc
