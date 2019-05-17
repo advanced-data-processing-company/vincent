@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['log',['Log',['../classadpc_1_1Log.html',1,'adpc::Log'],['../classadpc_1_1Log.html#a52882c51a9e3abd940164ded9a99b897',1,'adpc::Log::log()']]],
-  ['log_5fconfig_2eh',['log_config.h',['../log__config_8h.html',1,'']]],
-  ['logconfiguration',['LogConfiguration',['../classadpc_1_1LogConfiguration.html',1,'adpc']]],
-  ['loglevel',['LogLevel',['../log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133',1,'adpc']]]
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['meeting',['Meeting',['../md_metting.html',1,'']]]
 ];

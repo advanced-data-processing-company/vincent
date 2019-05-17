@@ -23,13 +23,13 @@ enum LogSinkType { kdaily_file, kterminal };
 /// copy from spdlog::level::level_enum
 /// log level
 enum LogLevel {
-    trace    = SPDLOG_LEVEL_TRACE,
-    debug    = SPDLOG_LEVEL_DEBUG,
-    info     = SPDLOG_LEVEL_INFO,
-    warn     = SPDLOG_LEVEL_WARN,
-    err      = SPDLOG_LEVEL_ERROR,
-    critical = SPDLOG_LEVEL_CRITICAL,
-    off      = SPDLOG_LEVEL_OFF,
+    ktrace    = SPDLOG_LEVEL_TRACE,
+    kdebug    = SPDLOG_LEVEL_DEBUG,
+    kinfo     = SPDLOG_LEVEL_INFO,
+    kwarn     = SPDLOG_LEVEL_WARN,
+    kerr      = SPDLOG_LEVEL_ERROR,
+    kcritical = SPDLOG_LEVEL_CRITICAL,
+    koff      = SPDLOG_LEVEL_OFF,
 };
 
 class LogConfiguration {
@@ -38,8 +38,8 @@ class LogConfiguration {
     // configuration per sink
     bool     termial_enabled_{true};
     bool     daily_file_enabled_{true};
-    LogLevel daily_file_level_{info};
-    LogLevel terminal_level_{warn};
+    LogLevel daily_file_level_{kinfo};
+    LogLevel terminal_level_{kwarn};
     size_t   id_{0};  // 0 for invalid
 };
 

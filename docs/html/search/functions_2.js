@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['log',['log',['../classadpc_1_1Log.html#a52882c51a9e3abd940164ded9a99b897',1,'adpc::Log']]]
+  ['setlevel',['SetLevel',['../classadpc_1_1Log.html#aef0274bae7eb7286d090bb1953c2bc29',1,'adpc::Log']]]
 ];

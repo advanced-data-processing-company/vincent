@@ -12,25 +12,10 @@ The log class for vincent.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}{Set\+Level} (const string \&module\+\_\+name, const Log\+Sink\+Type type, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level)
-\item 
-\mbox{\Hypertarget{classadpc_1_1Log_ae9c832f1a8d5f684308f5ef95d53cf36}\label{classadpc_1_1Log_ae9c832f1a8d5f684308f5ef95d53cf36}} 
-void {\bfseries Enable} (const string \&module\+\_\+name, const Log\+Sink\+Type type, const bool enable)
-\item 
-\mbox{\Hypertarget{classadpc_1_1Log_aed7af8c9b314244e45a7e359cf0a4c82}\label{classadpc_1_1Log_aed7af8c9b314244e45a7e359cf0a4c82}} 
-size\+\_\+t {\bfseries Add\+Module} (string \&\&module\+\_\+name, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level=Log\+Level\+::warn, const bool terminal=true, const bool daily\+\_\+file=true)
-\end{DoxyCompactItemize}
-\textbf{ }\par
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classadpc_1_1Log_a52882c51a9e3abd940164ded9a99b897}{log} (size\+\_\+t module, \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} lvl, const char $\ast$fmt, const Args \&... args)
-\end{DoxyCompactItemize}
-
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static void \hyperlink{classadpc_1_1Log_a41b80ba97a00d128777d22f369bc791f}{Init\+Path} ()
-\begin{DoxyCompactList}\small\item\em create directory if not exist \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classadpc_1_1Log_aef0274bae7eb7286d090bb1953c2bc29}{Set\+Level} (const size\+\_\+t \&id, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level=ktrace, const Log\+Sink\+Type type=kterminal)
+\begin{DoxyCompactList}\small\item\em Set\+Level set log level for a module. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classadpc_1_1Log_a6b5cdb7e0f4a7cd5f29d031af4800ea7}{Add\+Module} (string \&\&module\+\_\+name, const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level} level=Log\+Level\+::kwarn, const bool terminal=true, const bool daily\+\_\+file=true)
+\begin{DoxyCompactList}\small\item\em add a log for a module \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,32 +32,55 @@ contains one daily file and a color terminal
 destination path of log is ./log/ 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classadpc_1_1Log_a41b80ba97a00d128777d22f369bc791f}\label{classadpc_1_1Log_a41b80ba97a00d128777d22f369bc791f}} 
-\index{adpc\+::\+Log@{adpc\+::\+Log}!Init\+Path@{Init\+Path}}
-\index{Init\+Path@{Init\+Path}!adpc\+::\+Log@{adpc\+::\+Log}}
-\subsubsection{\texorpdfstring{Init\+Path()}{InitPath()}}
-{\footnotesize\ttfamily void adpc\+::\+Log\+::\+Init\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{classadpc_1_1Log_a6b5cdb7e0f4a7cd5f29d031af4800ea7}\label{classadpc_1_1Log_a6b5cdb7e0f4a7cd5f29d031af4800ea7}} 
+\index{adpc\+::\+Log@{adpc\+::\+Log}!Add\+Module@{Add\+Module}}
+\index{Add\+Module@{Add\+Module}!adpc\+::\+Log@{adpc\+::\+Log}}
+\subsubsection{\texorpdfstring{Add\+Module()}{AddModule()}}
+{\footnotesize\ttfamily size\+\_\+t adpc\+::\+Log\+::\+Add\+Module (\begin{DoxyParamCaption}\item[{string \&\&}]{module\+\_\+name,  }\item[{const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level}}]{level = {\ttfamily LogLevel\+:\+:kwarn},  }\item[{const bool}]{terminal = {\ttfamily true},  }\item[{const bool}]{daily\+\_\+file = {\ttfamily true} }\end{DoxyParamCaption})}
 
 
 
-create directory if not exist 
+add a log for a module 
 
-\begin{DoxyWarning}{Warning}
-call this function before any call to log, or you may crash your program
-\end{DoxyWarning}
-this funtion is guaranteed to be executed once enen if you call multiple times from multi-\/threads \mbox{\Hypertarget{classadpc_1_1Log_a52882c51a9e3abd940164ded9a99b897}\label{classadpc_1_1Log_a52882c51a9e3abd940164ded9a99b897}} 
-\index{adpc\+::\+Log@{adpc\+::\+Log}!log@{log}}
-\index{log@{log}!adpc\+::\+Log@{adpc\+::\+Log}}
-\subsubsection{\texorpdfstring{log()}{log()}}
-{\footnotesize\ttfamily template$<$typename... Args$>$ \\
-void adpc\+::\+Log\+::log (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{module,  }\item[{\hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level}}]{lvl,  }\item[{const char $\ast$}]{fmt,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-general log function \mbox{\Hypertarget{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}\label{classadpc_1_1Log_a2e8bf1e2c8ac8381be9022df60530f87}} 
+\begin{DoxyParams}{Parameters}
+{\em module\+\_\+name} & module name, show in the log message \\
+\hline
+{\em level} & default log level \\
+\hline
+{\em terminal} & whether show in terminal log \\
+\hline
+{\em daily\+\_\+file} & whether show in daily file log \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classadpc_1_1Log_aef0274bae7eb7286d090bb1953c2bc29}\label{classadpc_1_1Log_aef0274bae7eb7286d090bb1953c2bc29}} 
 \index{adpc\+::\+Log@{adpc\+::\+Log}!Set\+Level@{Set\+Level}}
 \index{Set\+Level@{Set\+Level}!adpc\+::\+Log@{adpc\+::\+Log}}
 \subsubsection{\texorpdfstring{Set\+Level()}{SetLevel()}}
-{\footnotesize\ttfamily void adpc\+::\+Log\+::\+Set\+Level (\begin{DoxyParamCaption}\item[{const string \&}]{module\+\_\+name,  }\item[{const Log\+Sink\+Type}]{type,  }\item[{const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void adpc\+::\+Log\+::\+Set\+Level (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{id,  }\item[{const \hyperlink{log__config_8h_a172986fa5f658c5fe0b42bd954e9e133}{Log\+Level}}]{level = {\ttfamily ktrace},  }\item[{const Log\+Sink\+Type}]{type = {\ttfamily kterminal} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Set\+Level set log level for a module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & module id, retruned from \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classadpc_1_1Log_a6b5cdb7e0f4a7cd5f29d031af4800ea7}{Add\+Module} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em level} & level \\
+\hline
+{\em type} & type, terminal or daily file,{\bfseries N\+OT U\+S\+ED N\+OW} \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

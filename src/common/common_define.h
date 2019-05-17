@@ -25,7 +25,7 @@
 #    else
 #        define ADPC_UNUSED __attribute__((unused))
 #    endif
-#elif
+#else
 #    define ADPC_UNUSED  // not defined
 #endif
 

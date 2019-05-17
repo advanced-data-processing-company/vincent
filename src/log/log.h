@@ -1,6 +1,24 @@
+/**
+ * @file log.h
+ * @author tonghao.yuan (michael.19@163.com)
+ * @brief log module of vincent
+ *
+ * This log have multiple front-end and multiple back-end
+ * every module can have its own front-end by call @sa AddModule
+ * ervey module can have its own log level
+ * @warning placehoder is `{}`
+ *
+ * @version 0.1
+ * @date 2019-05-17
+ *
+ * @copyright Copyright (c) 2019
+ *
+ */
+
 #pragma once
 
 #include "adpctl/singleton.h"  // for singleton
+#include "common/common_define.h"
 #include "log/log_config.h"
 
 #include <atomic>  // for thread save write to bool
@@ -33,76 +51,55 @@ class Log {
     friend class adpctl::Singleton<Log>;
 
    public:
-    /**
-     * @brief create directory if not exist
-     *
-     * @warning call this function before any call to log, or you may crash your program
-     *
-     * this funtion is guaranteed to be executed once enen if you call multiple times from
-     * multi-threads
-     */
-    static void InitPath();
-
-    /**
-     * general log function
-     * @{
-     */
-    template <typename... Args>
-    void log(size_t module, LogLevel lvl, const char *fmt, const Args &... args) {
-        assert(module < logs_.size());
-        logs_[module]->log(static_cast<spdlog::level::level_enum>(lvl), fmt, args...);
+#define ADPC_LOG_NAME(lvl)                                                        \
+    template <typename... Args>                                                   \
+    void lvl(size_t      module,                                                  \
+             const char *file,                                                    \
+             int         line,                                                    \
+             const char *func,                                                    \
+             const char *fmt,                                                     \
+             const Args &... args) {                                              \
+        assert(module < logs_.size());                                            \
+        logs_[module]->log({file, line, func}, spdlog::level::lvl, fmt, args...); \
     }
 
-    //    template <typename... Args>
-    //    void log(const char *file, int line, const char *func, LogLevel lvl, const char *fmt,
-    //             const Args &... args) {
-    //        log_.log({file, line, func}, static_cast<spdlog::level::level_enum>(lvl), fmt,
-    //        args...);
-    //    }
+    ADPC_LOG_NAME(critical)
+    ADPC_LOG_NAME(err)
+    ADPC_LOG_NAME(warn)
+    ADPC_LOG_NAME(info)
+    ADPC_LOG_NAME(debug)
+    ADPC_LOG_NAME(trace)
 
-    //    void log(LogLevel lvl, const char *msg) {
-    //        log_.log(static_cast<spdlog::level::level_enum>(lvl), msg);
-    //    }
-    //    void log(const char *file, int line, const char *func, LogLevel lvl, const char *msg) {
-    //        log_.log({file, line, func}, static_cast<spdlog::level::level_enum>(lvl), msg);
-    //    }
-    /** @} */
+#undef ADPC_LOG_NAME
 
-    //    /**
-    //     *special log function
-    //     * @{
-    //     */
-    //    template <typename... Args>
-    //    void trace(const char *fmt, const Args &... args);
+    /**
+     * @brief SetLevel  set log level for a module
+     * @param id        module id, retruned from @sa AddModule
+     * @param level     level
+     * @param type      type, terminal or daily file,**NOT USED NOW**
+     */
+    void SetLevel(const size_t &id, const LogLevel level = ktrace,
+                  const LogSinkType type = kterminal) {
+        assert(id < logs_.size());
+        (void)type;
 
-    //    template <typename... Args>
-    //    void debug(const char *fmt, const Args &... args);
+        logs_[id]->set_level(static_cast<spdlog::level::level_enum>(level));
+    }
 
-    //    template <typename... Args>
-    //    void info(const char *fmt, const Args &... args);
-
-    //    template <typename... Args>
-    //    void warn(const char *fmt, const Args &... args);
-
-    //    template <typename... Args>
-    //    void error(const char *fmt, const Args &... args);
-
-    //    template <typename... Args>
-    //    void critical(const char *fmt, const Args &... args);
-    //    /** @}*/
-
-    inline void SetLevel(const string &module_name, const LogSinkType type, const LogLevel level);
-    inline void Enable(const string &module_name, const LogSinkType type, const bool enable);
-
-    size_t AddModule(string &&module_name, const LogLevel level = LogLevel::warn,
+    /**
+     * @brief add a log for a module
+     * @param module_name   module name, show in the log message
+     * @param level         default log level
+     * @param terminal      whether show in terminal log
+     * @param daily_file    whether show in daily file log
+     * @return
+     */
+    size_t AddModule(string &&module_name, const LogLevel level = LogLevel::kwarn,
                      const bool terminal = true, const bool daily_file = true);
 
    private:
     Log();
     ~Log() = default;
-
-    LogConfiguration &get_module_config(const string &module_name);
-    void              create_log_directory();
 
    private:
     using logPtr = unique_ptr<spdlog::logger>;

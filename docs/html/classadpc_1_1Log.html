@@ -64,7 +64,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classadpc_1_1Log-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -79,24 +78,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e8bf1e2c8ac8381be9022df60530f87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classadpc_1_1Log.html#a2e8bf1e2c8ac8381be9022df60530f87">SetLevel</a> (const string &amp;module_name, const LogSinkType type, const <a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a> level)</td></tr>
-<tr class="separator:a2e8bf1e2c8ac8381be9022df60530f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9c832f1a8d5f684308f5ef95d53cf36"><td class="memItemLeft" align="right" valign="top"><a id="ae9c832f1a8d5f684308f5ef95d53cf36"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Enable</b> (const string &amp;module_name, const LogSinkType type, const bool enable)</td></tr>
-<tr class="separator:ae9c832f1a8d5f684308f5ef95d53cf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed7af8c9b314244e45a7e359cf0a4c82"><td class="memItemLeft" align="right" valign="top"><a id="aed7af8c9b314244e45a7e359cf0a4c82"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>AddModule</b> (string &amp;&amp;module_name, const <a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a> level=LogLevel::warn, const bool terminal=true, const bool daily_file=true)</td></tr>
-<tr class="separator:aed7af8c9b314244e45a7e359cf0a4c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a52882c51a9e3abd940164ded9a99b897"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a52882c51a9e3abd940164ded9a99b897"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classadpc_1_1Log.html#a52882c51a9e3abd940164ded9a99b897">log</a> (size_t module, <a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a> lvl, const char *fmt, const Args &amp;... args)</td></tr>
-<tr class="separator:a52882c51a9e3abd940164ded9a99b897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a41b80ba97a00d128777d22f369bc791f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classadpc_1_1Log.html#a41b80ba97a00d128777d22f369bc791f">InitPath</a> ()</td></tr>
-<tr class="memdesc:a41b80ba97a00d128777d22f369bc791f"><td class="mdescLeft">&#160;</td><td class="mdescRight">create directory if not exist  <a href="#a41b80ba97a00d128777d22f369bc791f">More...</a><br /></td></tr>
-<tr class="separator:a41b80ba97a00d128777d22f369bc791f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0274bae7eb7286d090bb1953c2bc29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classadpc_1_1Log.html#aef0274bae7eb7286d090bb1953c2bc29">SetLevel</a> (const size_t &amp;id, const <a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a> level=ktrace, const LogSinkType type=kterminal)</td></tr>
+<tr class="memdesc:aef0274bae7eb7286d090bb1953c2bc29"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetLevel set log level for a module.  <a href="#aef0274bae7eb7286d090bb1953c2bc29">More...</a><br /></td></tr>
+<tr class="separator:aef0274bae7eb7286d090bb1953c2bc29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b5cdb7e0f4a7cd5f29d031af4800ea7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classadpc_1_1Log.html#a6b5cdb7e0f4a7cd5f29d031af4800ea7">AddModule</a> (string &amp;&amp;module_name, const <a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a> level=LogLevel::kwarn, const bool terminal=true, const bool daily_file=true)</td></tr>
+<tr class="memdesc:a6b5cdb7e0f4a7cd5f29d031af4800ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a log for a module  <a href="#a6b5cdb7e0f4a7cd5f29d031af4800ea7">More...</a><br /></td></tr>
+<tr class="separator:a6b5cdb7e0f4a7cd5f29d031af4800ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -109,69 +96,35 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>adpctl::Singleton&lt
 <p>contains one daily file and a color terminal</p>
 <p>destination path of log is ./log/ </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a41b80ba97a00d128777d22f369bc791f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41b80ba97a00d128777d22f369bc791f">&#9670;&nbsp;</a></span>InitPath()</h2>
+<a id="a6b5cdb7e0f4a7cd5f29d031af4800ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b5cdb7e0f4a7cd5f29d031af4800ea7">&#9670;&nbsp;</a></span>AddModule()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void adpc::Log::InitPath </td>
+          <td class="memname">size_t adpc::Log::AddModule </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>create directory if not exist </p>
-<dl class="section warning"><dt>Warning</dt><dd>call this function before any call to log, or you may crash your program</dd></dl>
-<p>this funtion is guaranteed to be executed once enen if you call multiple times from multi-threads </p>
-
-</div>
-</div>
-<a id="a52882c51a9e3abd940164ded9a99b897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52882c51a9e3abd940164ded9a99b897">&#9670;&nbsp;</a></span>log()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void adpc::Log::log </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>module</em>, </td>
+          <td class="paramtype">string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>module_name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a>&#160;</td>
-          <td class="paramname"><em>lvl</em>, </td>
+          <td class="paramtype">const <a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a>&#160;</td>
+          <td class="paramname"><em>level</em> = <code>LogLevel::kwarn</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>terminal</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Args &amp;...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>daily_file</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -179,18 +132,24 @@ template&lt;typename... Args&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>general log function </p>
+
+<p>add a log for a module </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module_name</td><td>module name, show in the log message </td></tr>
+    <tr><td class="paramname">level</td><td>default log level </td></tr>
+    <tr><td class="paramname">terminal</td><td>whether show in terminal log </td></tr>
+    <tr><td class="paramname">daily_file</td><td>whether show in daily file log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="a2e8bf1e2c8ac8381be9022df60530f87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e8bf1e2c8ac8381be9022df60530f87">&#9670;&nbsp;</a></span>SetLevel()</h2>
+<a id="aef0274bae7eb7286d090bb1953c2bc29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0274bae7eb7286d090bb1953c2bc29">&#9670;&nbsp;</a></span>SetLevel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,20 +160,20 @@ template&lt;typename... Args&gt; </div>
         <tr>
           <td class="memname">void adpc::Log::SetLevel </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>module_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const LogSinkType&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="log__config_8h.html#a172986fa5f658c5fe0b42bd954e9e133">LogLevel</a>&#160;</td>
-          <td class="paramname"><em>level</em>&#160;</td>
+          <td class="paramname"><em>level</em> = <code>ktrace</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const LogSinkType&#160;</td>
+          <td class="paramname"><em>type</em> = <code>kterminal</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -228,6 +187,22 @@ template&lt;typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>SetLevel set log level for a module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>module id, retruned from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classadpc_1_1Log.html#a6b5cdb7e0f4a7cd5f29d031af4800ea7" title="add a log for a module ">AddModule</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>level </td></tr>
+    <tr><td class="paramname">type</td><td>type, terminal or daily file,<b>NOT USED NOW</b> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
