@@ -9,12 +9,12 @@
 - **purpose**: log
 - **usage**: header only
 
-## gtest
+## doctest
 
-- **source**: [gtest](https://github.com/google/googletest)
-- **version**: 1.8.1
+- **source**: [doctest](https://github.com/onqtam/doctest)
+- **version**: 2.3.2
 - **purpose**: test framework
-- **usage**: auto build `gtest_src/src` to get `libgtest`, link to it if your need.
+- **usage**: head only
 
 ## inih
 
