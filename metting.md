@@ -15,15 +15,16 @@
 
 ### last metting
 
-- libhttp
+- [ ] libhttp
   
   add a sub-directory `http` in `src` directory, wrapp `libcurl`
 
-- log
+- [x] log
   
   add subdirectoy 'log' in `src` directory, warapp `spdlog`
 
-### Keyword
+### 19:00:00 25.05.2019
 
 - [ ] libhttp
-- [ ] liblog
+- [ ] websocket
+- [ ] log url
