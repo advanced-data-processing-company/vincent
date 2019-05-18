@@ -1,0 +1,83 @@
+\hypertarget{log_8h}{}\section{src/log/log.h File Reference}
+\label{log_8h}\index{src/log/log.\+h@{src/log/log.\+h}}
+
+
+log module of vincent  
+
+
+{\ttfamily \#include \char`\"{}adpctl/singleton.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/common\+\_\+define.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}log/log\+\_\+config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}spdlog/sinks/daily\+\_\+file\+\_\+sink.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spdlog/sinks/stdout\+\_\+color\+\_\+sinks.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spdlog/spdlog.\+h\char`\"{}}\newline
+Include dependency graph for log.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{log_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classadpc_1_1Log}{adpc\+::\+Log}
+\begin{DoxyCompactList}\small\item\em The log class for vincent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries A\+D\+P\+C\+\_\+\+L\+O\+G\+\_\+\+N\+A\+ME}(lvl)
+\item 
+\mbox{\Hypertarget{log_8h_a159ca84d25a5487d8e81e4438725df19}\label{log_8h_a159ca84d25a5487d8e81e4438725df19}} 
+\#define {\bfseries L\+OG}~\hyperlink{classadpctl_1_1Singleton}{adpctl\+::\+Singleton}$<$\hyperlink{classadpc_1_1Log}{adpc\+::\+Log}$>$\+::Get\+Instance()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+log module of vincent 
+
+\begin{DoxyAuthor}{Author}
+tonghao.\+yuan (\href{mailto:michael.19@163.com}{\tt michael.\+19@163.\+com}) This log have multiple front-\/end and multiple back-\/end every module can have its own front-\/end by call 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+Add\+Module ervey module can have its own log level 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+placehoder is {\ttfamily \{\}}
+\end{DoxyWarning}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/05-\/17
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{log_8h_a8a890200ead6b94208877afe7d9b764c}\label{log_8h_a8a890200ead6b94208877afe7d9b764c}} 
+\index{log.\+h@{log.\+h}!A\+D\+P\+C\+\_\+\+L\+O\+G\+\_\+\+N\+A\+ME@{A\+D\+P\+C\+\_\+\+L\+O\+G\+\_\+\+N\+A\+ME}}
+\index{A\+D\+P\+C\+\_\+\+L\+O\+G\+\_\+\+N\+A\+ME@{A\+D\+P\+C\+\_\+\+L\+O\+G\+\_\+\+N\+A\+ME}!log.\+h@{log.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+P\+C\+\_\+\+L\+O\+G\+\_\+\+N\+A\+ME}{ADPC\_LOG\_NAME}}
+{\footnotesize\ttfamily \#define A\+D\+P\+C\+\_\+\+L\+O\+G\+\_\+\+N\+A\+ME(\begin{DoxyParamCaption}\item[{}]{lvl }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>                                                   \(\backslash\)
+    void lvl(\textcolor{keywordtype}{size\_t}      module,                                                  \(\backslash\)
+             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *file,                                                    \(\backslash\)
+             \textcolor{keywordtype}{int}         line,                                                    \(\backslash\)
+             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *func,                                                    \(\backslash\)
+             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt,                                                     \(\backslash\)
+             \textcolor{keyword}{const} Args &... args) \{                                              \(\backslash\)
+        assert(module < logs\_.size());                                            \(\backslash\)
+        logs\_[module]->log(\{file, line, func\}, spdlog::level::lvl, fmt, args...); \(\backslash\)
+    \}
+\end{DoxyCode}

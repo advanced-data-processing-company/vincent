@@ -62,36 +62,37 @@ $(function() {
 <div class="title">Vincent </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>medical manage system. <a href="https://app.codacy.com/app/maidamai0/vincent?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=advanced-data-processing-company/vincent&amp;utm_campaign=Badge_Grade_Settings"></a> <a href="https://travis-ci.org/advanced-data-processing-company/vincent"></a> <a href="https://ci.appveyor.com/project/maidamai0/vincent"></a> <a href="https://lgtm.com/projects/g/advanced-data-processing-company/vincent/alerts/"></a> <a href="https://lgtm.com/projects/g/advanced-data-processing-company/vincent/context:javascript"></a></p>
+<div class="textblock"><p><a href="https://app.codacy.com/app/maidamai0/vincent?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=advanced-data-processing-company/vincent&amp;utm_campaign=Badge_Grade_Settings"></a> <a href="https://travis-ci.org/advanced-data-processing-company/vincent"></a> <a href="https://ci.appveyor.com/project/maidamai0/vincent"></a> <a href="https://lgtm.com/projects/g/advanced-data-processing-company/vincent/alerts/"></a> <a href="https://lgtm.com/projects/g/advanced-data-processing-company/vincent/context:javascript"></a></p>
 <h2>Sql design</h2>
 <ul>
 <li><p class="startli">Online</p>
 <p class="startli"><a href="https://docs.google.com/document/d/1QlFliN9hr0bRWUpu1whWGgTl2qbUMroOrxDV7gtdL20/edit" title="google document for sql design">sql design google document</a></p>
 </li>
-<li><p class="startli">Offline</p>
-<p class="startli">see <a href="https://htmlpreview.github.io/?https://github.com/advanced-data-processing-company/vincent/blob/master/sql_table_design.html" title="sql_table_design.html">sql_table_design</a> if you can't access the online version.Note that this document may be late than online version. </p><h2>Source structure</h2>
-</li>
+<li>Offline see <a href="https://htmlpreview.github.io/?https://github.com/advanced-data-processing-company/vincent/blob/master/sql_table_design.html" title="sql_table_design.html">sql_table_design</a> if you can't access the online version.Note that this document may be late than online version.</li>
 </ul>
+<h2>Source structure</h2>
 <p>All source files are in <code>src</code> directory, each module has its own sub-directory in <code>src</code></p>
 <h2>Build</h2>
 <ol type="1">
 <li><code>cd ${VINCENT_ROOT_PATH}</code></li>
 <li><code>mkdir build &amp;&amp; cd build</code></li>
 <li><code>cmake ..</code></li>
-<li><code>make</code></li>
+<li><code>make</code> or <code>make test</code> if you want to excute tests</li>
 </ol>
-<ul>
-<li><b>DONT</b> build in <code>src</code> directory</li>
-<li>If you dont want to build <code>doxygen docs</code> call cmake with ``` cmake -DBUILD_DOC=OFF .. ```</li>
+<p><b>DONT</b> build in <code>src</code> directory</p><ul>
+<li>If you dont want to build <code>doxygen docs</code> call cmake with</li>
 </ul>
-<h2>Git commit message</h2>
+<div class="fragment"><div class="line">cmake -DBUILD_DOC=OFF ..</div></div><!-- fragment --><h2>Git commit message</h2>
 <h3>Reasons for these conventions</h3>
 <ul>
 <li>automatic generating changelog</li>
 <li>simple navigation through git history</li>
 </ul>
-<p>### Format of git commit message </p><div class="fragment"><div class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</div><div class="line"># blank line</div><div class="line">&lt;body&gt;</div><div class="line"># blank line</div><div class="line">&lt;footer&gt;</div></div><!-- fragment --><p> ### Example commit message </p><div class="fragment"><div class="line">fix(app): avoid memory leak</div><div class="line"></div><div class="line">use smart pointer to avoid memory leak</div><div class="line"></div><div class="line">#2310</div></div><!-- fragment --> <h3>first line</h3>
-<p>The first line cannot be longer than 70 characters, the second line is always blank and other lines should be wrapped at 80 characters. The type and scope should always be lowercase as shown below. </p><h4>Allowed &lt;type&gt; values</h4>
+<h3>Format of git commit message</h3>
+<div class="fragment"><div class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</div><div class="line"># blank line</div><div class="line">&lt;body&gt;</div><div class="line"># blank line</div><div class="line">&lt;footer&gt;</div></div><!-- fragment --><h3>Example commit message</h3>
+<div class="fragment"><div class="line">fix(app): avoid memory leak</div><div class="line"></div><div class="line">use smart pointer to avoid memory leak</div><div class="line"></div><div class="line">#2310</div></div><!-- fragment --><h3>first line</h3>
+<p>The first line cannot be longer than 70 characters, the second line is always blank and other lines should be wrapped at 80 characters. The type and scope should always be lowercase as shown below.</p>
+<h4>Allowed &lt;type&gt; values</h4>
 <ul>
 <li>feat (new feature for the user, not a new feature for build script)</li>
 <li>fix (bug fix for the user, not a fix to a build script)</li>
@@ -121,9 +122,19 @@ $(function() {
 </ul>
 <h2>Unit test</h2>
 <p>every library should has a executable to do test, test excutable name should end with library name plus <code>_test</code></p>
-<p>take <code>proto</code> for example, its test executable is <code>proto_test</code>,when built you can run test with </p><div class="fragment"><div class="line">cd build</div><div class="line">bin/proto_test</div></div><!-- fragment --><p> <b>Don't</b> forget to add <code>target_link_libraries(xxx_test gtest)</code> to your <code>CMakeLists.txt</code> to link <code>gtest</code></p>
-<p>and it should give something like </p><div class="fragment"><div class="line">Running main() from /home/thy/Documents/vincent/src/3rdparty/src/gtest_main.cc</div><div class="line">[==========] Running 2 tests from 1 test case.</div><div class="line">[----------] Global test environment set-up.</div><div class="line">[----------] 2 tests from json</div><div class="line">[ RUN      ] json.to_json</div><div class="line">[       OK ] json.to_json (0 ms)</div><div class="line">[ RUN      ] json.from_json</div><div class="line">[       OK ] json.from_json (0 ms)</div><div class="line">[----------] 2 tests from json (0 ms total)</div><div class="line"></div><div class="line">[----------] Global test environment tear-down</div><div class="line">[==========] 2 tests from 1 test case ran. (0 ms total)</div><div class="line">[  PASSED  ] 2 tests.</div></div><!-- fragment --><p><code>make &amp;&amp; make test</code></p>
-<div class="fragment"><div class="line">Running tests...</div><div class="line">/usr/bin/ctest --force-new-ctest-process </div><div class="line">Test project /home/thy/Documents/vincent/build</div><div class="line">    Start 1: proto</div><div class="line">1/2 Test #1: proto ............................   Passed    0.00 sec</div><div class="line">    Start 2: log</div><div class="line">2/2 Test #2: log ..............................   Passed    0.00 sec</div><div class="line"></div><div class="line">100% tests passed, 0 tests failed out of 2</div><div class="line"></div><div class="line">Total Test time (real) =   0.01 sec</div></div><!-- fragment --> </div></div><!-- contents -->
+<p>take <code>proto</code> for example, its test executable is <code>proto_test</code>,when built you can run test with</p>
+<div class="fragment"><div class="line">cd build</div><div class="line">bin/proto_test</div></div><!-- fragment --><p>and it should give something like</p>
+<div class="fragment"><div class="line">Running main() from /home/thy/Documents/vincent/src/3rdparty/src/gtest_main.cc</div><div class="line">[==========] Running 2 tests from 1 test case.</div><div class="line">[----------] Global test environment set-up.</div><div class="line">[----------] 2 tests from json</div><div class="line">[ RUN      ] json.to_json</div><div class="line">[       OK ] json.to_json (0 ms)</div><div class="line">[ RUN      ] json.from_json</div><div class="line">[       OK ] json.from_json (0 ms)</div><div class="line">[----------] 2 tests from json (0 ms total)</div><div class="line"></div><div class="line">[----------] Global test environment tear-down</div><div class="line">[==========] 2 tests from 1 test case ran. (0 ms total)</div><div class="line">[  PASSED  ] 2 tests.</div></div><!-- fragment --><p><code>make &amp;&amp; make test</code></p>
+<div class="fragment"><div class="line">Running tests...</div><div class="line">/usr/bin/ctest --force-new-ctest-process </div><div class="line">Test project /home/thy/Documents/vincent/build</div><div class="line">    Start 1: proto</div><div class="line">1/2 Test #1: proto ............................   Passed    0.00 sec</div><div class="line">    Start 2: log</div><div class="line">2/2 Test #2: log ..............................   Passed    0.00 sec</div><div class="line"></div><div class="line">100% tests passed, 0 tests failed out of 2</div><div class="line"></div><div class="line">Total Test time (real) =   0.01 sec</div></div><!-- fragment --><h2>How to add a new module</h2>
+<ul>
+<li>every module should have a directory in <code>src</code></li>
+<li>erery module should have a test executable</li>
+<li>test source files shoudl end with <code>_test</code></li>
+<li>module <code>CMakeLists.tst</code> template</li>
+<li>add <code>add_subdirectory(module_name)</code> in <code>src/CMakeLists.tst</code></li>
+<li><b>Don't</b> add any new include indrectory </li>
+</ul>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

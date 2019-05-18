@@ -1,16 +1,16 @@
-file(GLOB CONFIG_SRC 
-    "*[^test].cpp"
-    "*[^test].h")
+file(GLOB LIB_SRC
+    "*.cpp"
+    "*.h")
 
-file(GLOB CONFIG_TEST_SRC
+file(GLOB TEST_SRC
     "*test.cpp")
 
 # add library
-add_library(config ${CONFIG_SRC})
+add_library(config ${LIB_SRC})
 target_link_libraries(config common)
 
 # add test executable
-add_executable(config_test ${CONFIG_TEST_SRC})
+add_executable(config_test ${TEST_SRC})
 
 add_test(config ${EXECUTABLE_OUTPUT_PATH}/config_test)
 

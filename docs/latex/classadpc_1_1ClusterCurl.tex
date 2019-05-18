@@ -1,0 +1,59 @@
+\hypertarget{classadpc_1_1ClusterCurl}{}\section{adpc\+:\+:Cluster\+Curl Class Reference}
+\label{classadpc_1_1ClusterCurl}\index{adpc\+::\+Cluster\+Curl@{adpc\+::\+Cluster\+Curl}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a2878a4c0f97721ee58a5f06055b953cc}\label{classadpc_1_1ClusterCurl_a2878a4c0f97721ee58a5f06055b953cc}} 
+{\bfseries Cluster\+Curl} (const std\+::string \&s\+IP, const unsigned int n\+Port, const std\+::string \&s\+User, const std\+::string \&s\+Pwd)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a1e0b63436bd019090ce56ec7d3a50bcf}\label{classadpc_1_1ClusterCurl_a1e0b63436bd019090ce56ec7d3a50bcf}} 
+void {\bfseries set\+Connect\+Timeout} (unsigned int n\+Time)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_ac19296f69f3278c01fe4e3acadff701b}\label{classadpc_1_1ClusterCurl_ac19296f69f3278c01fe4e3acadff701b}} 
+void {\bfseries set\+Timeout} (unsigned int n\+Time)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a8a4e4a7f681b4db03a722efdb6a3a28e}\label{classadpc_1_1ClusterCurl_a8a4e4a7f681b4db03a722efdb6a3a28e}} 
+void {\bfseries set\+Server} (const std\+::string \&s\+IP, const unsigned int n\+Port, const std\+::string \&s\+User, const std\+::string \&s\+Pwd)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a1e70fc0ed8b8437069e3522b8cb4ab34}\label{classadpc_1_1ClusterCurl_a1e70fc0ed8b8437069e3522b8cb4ab34}} 
+void {\bfseries set\+Url\+Path} (const std\+::string \&s\+Url\+Path)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a93c88c9d2a0e6291fedfec414454d485}\label{classadpc_1_1ClusterCurl_a93c88c9d2a0e6291fedfec414454d485}} 
+int {\bfseries send\+Msg} (const std\+::string \&s\+Msg, const int n\+Method, const int n\+Format, std\+::string \&s\+Rec)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a67c43148e9a035d0805bf1f036ff1fa0}\label{classadpc_1_1ClusterCurl_a67c43148e9a035d0805bf1f036ff1fa0}} 
+int {\bfseries download\+File} (const std\+::string \&s\+File\+Name, const int n\+Format)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_afd2b2b6d8bc96ea452c73c3df1c432e5}\label{classadpc_1_1ClusterCurl_afd2b2b6d8bc96ea452c73c3df1c432e5}} 
+int {\bfseries upload\+File\+Content} (const std\+::string \&s\+File\+Name, const int n\+Format, std\+::string \&s\+Rec)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a3a892af9d597108c2026b081d05c1a46}\label{classadpc_1_1ClusterCurl_a3a892af9d597108c2026b081d05c1a46}} 
+int {\bfseries upload\+File} (const std\+::string \&s\+File\+Fullname, std\+::string \&s\+Rec)
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_af656fd7b837a64751775e089a277c791}\label{classadpc_1_1ClusterCurl_af656fd7b837a64751775e089a277c791}} 
+int {\bfseries init\+Curl\+Resource} ()
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a570f08272147d8fbf4a0ec803a475fde}\label{classadpc_1_1ClusterCurl_a570f08272147d8fbf4a0ec803a475fde}} 
+int {\bfseries release\+Curl\+Resource} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a95fc974d514e1457e857be9ef5542ca9}\label{classadpc_1_1ClusterCurl_a95fc974d514e1457e857be9ef5542ca9}} 
+static int {\bfseries global\+Init} ()
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a1468e0bcc34d2164c6596cda5ab0445e}\label{classadpc_1_1ClusterCurl_a1468e0bcc34d2164c6596cda5ab0445e}} 
+static int {\bfseries global\+Cleanup} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classadpc_1_1ClusterCurl_a4ae98be3ed1359c249b4951c942c400d}\label{classadpc_1_1ClusterCurl_a4ae98be3ed1359c249b4951c942c400d}} 
+class {\bfseries adpctl\+::\+Singleton$<$ Cluster\+Curl $>$}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/http/http.\+h\item 
+src/http/http.\+cpp\end{DoxyCompactItemize}

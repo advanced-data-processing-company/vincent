@@ -1,15 +1,15 @@
-file(GLOB LOG_SRC 
-    "*[^test].cpp"
-    "*[^test].h")
+file(GLOB LIB_SRC
+    "*.cpp"
+    "*.h")
 
-file(GLOB LOG_TEST_SRC
+file(GLOB TEST_SRC
     "*test.cpp")
 
 # add library
-add_library(log ${LOG_SRC})
+add_library(log ${LIB_SRC})
 
 # add test executable
-add_executable(log_test ${LOG_TEST_SRC})
+add_executable(log_test ${TEST_SRC})
 
 add_test(log ${EXECUTABLE_OUTPUT_PATH}/log_test)
 
