@@ -1,5 +1,7 @@
 # Vincent
 
+![ ](./logo.png "logo")
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f8330fe0345f407ca619af7015d3500a)](https://app.codacy.com/app/maidamai0/vincent?utm_source=github.com&utm_medium=referral&utm_content=advanced-data-processing-company/vincent&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.org/advanced-data-processing-company/vincent.svg?branch=master)](https://travis-ci.org/advanced-data-processing-company/vincent)
 [![Build status](https://ci.appveyor.com/api/projects/status/f69xmttanl5kc00m?svg=true)](https://ci.appveyor.com/project/maidamai0/vincent)
