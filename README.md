@@ -24,7 +24,7 @@ All source files are in `src` directory, each module has its own sub-directory i
  1. `cd ${VINCENT_ROOT_PATH}`
  2. `mkdir build && cd build`
  3. `cmake ..`
- 4. `make` or `make test` if you want to excute tests
+ 4. `make` or `make && make test` if you want to excute tests
 
 - **DONT** build in `src` directory
 - If you dont want to build `doxygen docs` call cmake with
@@ -144,13 +144,12 @@ Total Test time (real) =   0.03 sec
 
 ## How to add a new module
 
-- every module should have a directory in `src`
+- every module should have a sub-directory in `src`
 - erery module should have a test executable
-- test source files shoudl end with `_test`
-- module `CMakeLists.tst` template
+- test source files should end with `_test`
 - add `add_subdirectory(module_name)` in `src/CMakeLists.tst`
 - **Don't** add any new include indrectory
-- flowwing is a `CMakeLists` template in most cases, you only need do two things:
+- following is a `CMakeLists` template, in most cases you only need do two things:
 
     1. replace all `config` with your `lib_name`
     2. add external lib such as `common` here to your lib
@@ -162,6 +161,8 @@ file(GLOB LIB_SRC
 
 file(GLOB TEST_SRC
     "*test.cpp")
+
+list(REMOVE_ITEM LIB_SRC ${TEST_SRC}})
 
 # add library, replace all `config` with your own `lib_name`
 add_library(config ${LIB_SRC})

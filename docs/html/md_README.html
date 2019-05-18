@@ -124,16 +124,32 @@ $(function() {
 <p>every library should has a executable to do test, test excutable name should end with library name plus <code>_test</code></p>
 <p>take <code>proto</code> for example, its test executable is <code>proto_test</code>,when built you can run test with</p>
 <div class="fragment"><div class="line">cd build</div><div class="line">bin/proto_test</div></div><!-- fragment --><p>and it should give something like</p>
-<div class="fragment"><div class="line">Running main() from /home/thy/Documents/vincent/src/3rdparty/src/gtest_main.cc</div><div class="line">[==========] Running 2 tests from 1 test case.</div><div class="line">[----------] Global test environment set-up.</div><div class="line">[----------] 2 tests from json</div><div class="line">[ RUN      ] json.to_json</div><div class="line">[       OK ] json.to_json (0 ms)</div><div class="line">[ RUN      ] json.from_json</div><div class="line">[       OK ] json.from_json (0 ms)</div><div class="line">[----------] 2 tests from json (0 ms total)</div><div class="line"></div><div class="line">[----------] Global test environment tear-down</div><div class="line">[==========] 2 tests from 1 test case ran. (0 ms total)</div><div class="line">[  PASSED  ] 2 tests.</div></div><!-- fragment --><p><code>make &amp;&amp; make test</code></p>
-<div class="fragment"><div class="line">Running tests...</div><div class="line">/usr/bin/ctest --force-new-ctest-process </div><div class="line">Test project /home/thy/Documents/vincent/build</div><div class="line">    Start 1: proto</div><div class="line">1/2 Test #1: proto ............................   Passed    0.00 sec</div><div class="line">    Start 2: log</div><div class="line">2/2 Test #2: log ..............................   Passed    0.00 sec</div><div class="line"></div><div class="line">100% tests passed, 0 tests failed out of 2</div><div class="line"></div><div class="line">Total Test time (real) =   0.01 sec</div></div><!-- fragment --><h2>How to add a new module</h2>
+<div class="fragment"><div class="line">[doctest] doctest version is &quot;2.3.2&quot;</div><div class="line">[doctest] run with &quot;--help&quot; for options</div><div class="line">===============================================================================</div><div class="line">[doctest] test cases:      1 |      1 passed |      0 failed |      0 skipped</div><div class="line">[doctest] assertions:      4 |      4 passed |      0 failed |</div><div class="line">[doctest] Status: SUCCESS!</div></div><!-- fragment --><p><code>make &amp;&amp; make test</code></p>
+<div class="fragment"><div class="line">Running tests...</div><div class="line">/usr/bin/ctest --force-new-ctest-process </div><div class="line">Test project /home/thy/Documents/vincent/build</div><div class="line">    Start 1: proto</div><div class="line">1/4 Test #1: proto ............................   Passed    0.00 sec</div><div class="line">    Start 2: log</div><div class="line">2/4 Test #2: log ..............................   Passed    0.01 sec</div><div class="line">    Start 3: config</div><div class="line">3/4 Test #3: config ...........................   Passed    0.00 sec</div><div class="line">    Start 4: common</div><div class="line">4/4 Test #4: common ...........................   Passed    0.01 sec</div><div class="line"></div><div class="line">100% tests passed, 0 tests failed out of 4</div><div class="line"></div><div class="line">Total Test time (real) =   0.03 sec</div></div><!-- fragment --><h2>How to add a new module</h2>
 <ul>
-<li>every module should have a directory in <code>src</code></li>
+<li>every module should have a sub-directory in <code>src</code></li>
 <li>erery module should have a test executable</li>
-<li>test source files shoudl end with <code>_test</code></li>
-<li>module <code>CMakeLists.tst</code> template</li>
+<li>test source files should end with <code>_test</code></li>
 <li>add <code>add_subdirectory(module_name)</code> in <code>src/CMakeLists.tst</code></li>
-<li><b>Don't</b> add any new include indrectory </li>
+<li><b>Don't</b> add any new include indrectory</li>
+<li>following is a <code>CMakeLists</code> template, in most cases you only need do two things:<ol type="1">
+<li>replace all <code>config</code> with your <code>lib_name</code></li>
+<li>add external lib such as <code>common</code> here to your lib</li>
+</ol>
+</li>
 </ul>
+<p>```cmake file(GLOB LIB_SRC "*.cpp" "*.h")</p>
+<p>file(GLOB TEST_SRC "*test.cpp")</p>
+<p>list(REMOVE_ITEM LIB_SRC ${TEST_SRC}})</p>
+<h1>add library, replace all <code>config</code> with your own <code>lib_name</code></h1>
+<p>add_library(config ${LIB_SRC})</p>
+<h1>add any external lib to your own lib if needed, here is <code>common</code></h1>
+<p>target_link_libraries(config common)</p>
+<h1>add test executable</h1>
+<p>add_executable(config_test ${TEST_SRC})</p>
+<p>add_test(config ${EXECUTABLE_OUTPUT_PATH}/config_test)</p>
+<h1>link to lib</h1>
+<p>target_link_libraries(config_test config) ``` </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

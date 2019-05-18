@@ -5,6 +5,8 @@ file(GLOB LIB_SRC
 file(GLOB TEST_SRC
     "*test.cpp")
 
+list(REMOVE_ITEM LIB_SRC ${TEST_SRC}})
+
 # add library
 add_library(log ${LIB_SRC})
 

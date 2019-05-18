@@ -135,19 +135,12 @@ and it should give something like
 
 
 \begin{DoxyCode}
-Running main() from /home/thy/Documents/vincent/src/3rdparty/src/gtest\_main.cc
-[==========] Running 2 tests from 1 test case.
-[----------] Global test environment set-up.
-[----------] 2 tests from json
-[ RUN      ] json.to\_json
-[       OK ] json.to\_json (0 ms)
-[ RUN      ] json.from\_json
-[       OK ] json.from\_json (0 ms)
-[----------] 2 tests from json (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test case ran. (0 ms total)
-[  PASSED  ] 2 tests.
+[doctest] doctest version is "2.3.2"
+[doctest] run with "--help" for options
+===============================================================================
+[doctest] test cases:      1 |      1 passed |      0 failed |      0 skipped
+[doctest] assertions:      4 |      4 passed |      0 failed |
+[doctest] Status: SUCCESS!
 \end{DoxyCode}
 
 
@@ -159,13 +152,17 @@ Running tests...
 /usr/bin/ctest --force-new-ctest-process 
 Test project /home/thy/Documents/vincent/build
     Start 1: proto
-1/2 Test #1: proto ............................   Passed    0.00 sec
+1/4 Test #1: proto ............................   Passed    0.00 sec
     Start 2: log
-2/2 Test #2: log ..............................   Passed    0.00 sec
+2/4 Test #2: log ..............................   Passed    0.01 sec
+    Start 3: config
+3/4 Test #3: config ...........................   Passed    0.00 sec
+    Start 4: common
+4/4 Test #4: common ...........................   Passed    0.01 sec
 
-100% tests passed, 0 tests failed out of 2
+100% tests passed, 0 tests failed out of 4
 
-Total Test time (real) =   0.01 sec
+Total Test time (real) =   0.03 sec
 \end{DoxyCode}
 
 
@@ -173,10 +170,38 @@ Total Test time (real) =   0.01 sec
 
 
 \begin{DoxyItemize}
-\item every module should have a directory in {\ttfamily src}
+\item every module should have a sub-\/directory in {\ttfamily src}
 \item erery module should have a test executable
-\item test source files shoudl end with {\ttfamily \+\_\+test}
-\item module {\ttfamily C\+Make\+Lists.\+tst} template
+\item test source files should end with {\ttfamily \+\_\+test}
 \item add {\ttfamily add\+\_\+subdirectory(module\+\_\+name)} in {\ttfamily src/\+C\+Make\+Lists.\+tst}
-\item {\bfseries Don\textquotesingle{}t} add any new include indrectory 
+\item {\bfseries Don\textquotesingle{}t} add any new include indrectory
+\item following is a {\ttfamily C\+Make\+Lists} template, in most cases you only need do two things\+:
+\begin{DoxyEnumerate}
+\item replace all {\ttfamily config} with your {\ttfamily lib\+\_\+name}
+\item add external lib such as {\ttfamily common} here to your lib
+\end{DoxyEnumerate}
 \end{DoxyItemize}
+
+```cmake file(G\+L\+OB L\+I\+B\+\_\+\+S\+RC \char`\"{}$\ast$.\+cpp\char`\"{} \char`\"{}$\ast$.\+h\char`\"{})
+
+file(G\+L\+OB T\+E\+S\+T\+\_\+\+S\+RC \char`\"{}$\ast$test.\+cpp\char`\"{})
+
+list(R\+E\+M\+O\+V\+E\+\_\+\+I\+T\+EM L\+I\+B\+\_\+\+S\+RC \$\{T\+E\+S\+T\+\_\+\+S\+RC\}\})
+
+\section*{add library, replace all {\ttfamily config} with your own {\ttfamily lib\+\_\+name}}
+
+add\+\_\+library(config \$\{L\+I\+B\+\_\+\+S\+RC\})
+
+\section*{add any external lib to your own lib if needed, here is {\ttfamily common}}
+
+target\+\_\+link\+\_\+libraries(config common)
+
+\section*{add test executable}
+
+add\+\_\+executable(config\+\_\+test \$\{T\+E\+S\+T\+\_\+\+S\+RC\})
+
+add\+\_\+test(config \$\{E\+X\+E\+C\+U\+T\+A\+B\+L\+E\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+A\+TH\}/config\+\_\+test)
+
+\section*{link to lib}
+
+target\+\_\+link\+\_\+libraries(config\+\_\+test config) ``` 
