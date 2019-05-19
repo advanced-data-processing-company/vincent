@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>vincent: Meeting</title>
+<title>vincent: API Design</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,35 +59,22 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Meeting </div>  </div>
+<div class="title">API Design </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>18:00:00 01.05.2019</h2>
-<h3>Keyword</h3>
-<ul>
-<li>[x] CMake</li>
-<li>[x] clang-format</li>
-<li>[x] app source files</li>
-<li>[x] protobuf</li>
-<li>[x] libhttp -&gt; libcurl</li>
-<li>[x] log spdlog -&gt; spdlog</li>
-</ul>
-<h2>18::00:00 18.05.2019</h2>
-<h3>last metting</h3>
-<ul>
-<li><p class="startli">[ ] libhttp</p>
-<p class="startli">add a sub-directory <code>http</code> in <code>src</code> directory, wrapp <code>libcurl</code></p>
-</li>
-<li><p class="startli">[x] log</p>
-<p class="startli">add subdirectoy 'log' in <code>src</code> directory, warapp <code>spdlog</code></p>
-</li>
-</ul>
-<h3>19:00:00 25.05.2019</h3>
-<ul>
-<li>[ ] libhttp</li>
-<li>[ ] websocket</li>
-<li>[ ] log url </li>
-</ul>
+<div class="textblock"><h2>Reference</h2>
+<ol type="1">
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design">MicroSoft API Design Guide</a></li>
+<li><a href="https://cloud.google.com/apis/design/">Google API Design Guide</a></li>
+<li><a href="http://apistylebook.com/design/guidelines/google-api-design-guide#api-design">Others</a></li>
+</ol>
+<h2>Log</h2>
+<table class="doxtable">
+<tr>
+<th align="center">path </th><th align="center">Create </th><th align="center">Update </th><th align="center">Rtrive </th><th align="center">Delete  </th></tr>
+<tr>
+<td align="center">ROOT/Log/module_name?key1=value1&amp;key2=value2 </td><td align="center">X </td><td align="center"></td><td align="center">X </td><td align="center">X </td></tr>
+</table>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

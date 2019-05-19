@@ -4,7 +4,7 @@ project(vincent)
 
 # warning flags
 # all warning message specified here will not be allowed in code
-set(WARNING "-Wall -Werror -Wpedantic -Wextra -Wconversion")
+set(WARNING "-Wall -Werror -Wpedantic -Wextra -Wconversion -Wshadow=local")
 
 # c++ version
 set(CXX_VERSION "-std=c++17")

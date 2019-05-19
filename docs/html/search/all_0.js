@@ -6,5 +6,6 @@ var searchData=
   ['adpc_5flikely',['ADPC_LIKELY',['../common__define_8h.html#a88dfb71ec507f8d8515fd194fbe67ec4',1,'common_define.h']]],
   ['adpc_5funlikely',['ADPC_UNLIKELY',['../common__define_8h.html#a2308a86bb0e477c6bd4ee0f6571e29ca',1,'common_define.h']]],
   ['adpc_5funused',['ADPC_UNUSED',['../common__define_8h.html#a1ebba11cb2b65ac03b4a160b784a4cf5',1,'common_define.h']]],
-  ['adpctl',['adpctl',['../namespaceadpctl.html',1,'']]]
+  ['adpctl',['adpctl',['../namespaceadpctl.html',1,'']]],
+  ['api_20design',['API Design',['../md_REST_API.html',1,'']]]
 ];
