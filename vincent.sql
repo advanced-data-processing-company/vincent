@@ -197,6 +197,21 @@ DELETE FROM `warehouse_entry_order`;
 /*!40000 ALTER TABLE `warehouse_entry_order` DISABLE KEYS */;
 /*!40000 ALTER TABLE `warehouse_entry_order` ENABLE KEYS */;
 
+-- Dumping structure for table vincent.log
+DROP TABLE IF EXISTS `log`;
+CREATE TABLE IF NOT EXISTS `log` (
+  `id` int(11) DEFAULT NULL,
+  `module_name` varchar(50) DEFAULT NULL COMMENT '模块名称',
+  `log_level` int(5) DEFAULT 0 COMMENT '日志级别',
+  `log_date` date DEFAULT NULL COMMENT '日志生成时间',
+  `log_content` json DEFAULT NULL COMMENT '日志内容'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='日志记录表';
+
+-- Dumping data for table vincent.log: ~0 rows (approximately)
+DELETE FROM `log`;
+/*!40000 ALTER TABLE `log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `log` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
