@@ -23,8 +23,3 @@
   
   add subdirectoy 'log' in `src` directory, warapp `spdlog`
 
-### 19:00:00 25.05.2019
-
-- [ ] libhttp
-- [ ] websocket
-- [ ] log url
