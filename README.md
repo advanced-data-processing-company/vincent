@@ -21,6 +21,9 @@
 
 All source files are in `src` directory, each module has its own sub-directory in `src`
 
+## Mark down guide 
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+
 ## Build
 
  1. `cd ${VINCENT_ROOT_PATH}`
