@@ -188,4 +188,4 @@ git commit -m "Commit message"
 git config --global user.name "Sam Smith"
 git config --global user.email sam@example.com
 ```
--[basic git commands](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)
+- [basic git commands](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)
