@@ -180,3 +180,9 @@ add_test(config ${EXECUTABLE_OUTPUT_PATH}/config_test)
 # link to lib
 target_link_libraries(config_test config)
 ```
+## Useful git commands
+``` shell
+git status
+git add
+git commit
+```
