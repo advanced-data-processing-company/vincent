@@ -1,0 +1,73 @@
+\hypertarget{classCommandFactory}{}\section{Command\+Factory Class Reference}
+\label{classCommandFactory}\index{Command\+Factory@{Command\+Factory}}
+
+
+Collaboration diagram for Command\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{classCommandFactory__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Cmd\+Ptr \hyperlink{classCommandFactory_aec56c7b106ab048346e8d3119de83c57}{Create\+Cmd} (const string \&cmd\+\_\+string)
+\begin{DoxyCompactList}\small\item\em create a command according to the given {\ttfamily name} \end{DoxyCompactList}\item 
+static bool \hyperlink{classCommandFactory_a0a17b908385bd5087bd1cb45ae6b0639}{Register} (const string \&cmd\+\_\+name, Create\+Function \&\&create\+\_\+func)
+\begin{DoxyCompactList}\small\item\em Register a command, every command should call this function before program starts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommandFactory_a3399fec7a8ec044d7c184999b98ba830}\label{classCommandFactory_a3399fec7a8ec044d7c184999b98ba830}} 
+static map$<$ string, Create\+Function $>$ {\bfseries cmd\+\_\+create\+\_\+map\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommandFactory_aec56c7b106ab048346e8d3119de83c57}\label{classCommandFactory_aec56c7b106ab048346e8d3119de83c57}} 
+\index{Command\+Factory@{Command\+Factory}!Create\+Cmd@{Create\+Cmd}}
+\index{Create\+Cmd@{Create\+Cmd}!Command\+Factory@{Command\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Cmd()}{CreateCmd()}}
+{\footnotesize\ttfamily static Cmd\+Ptr Command\+Factory\+::\+Create\+Cmd (\begin{DoxyParamCaption}\item[{const string \&}]{cmd\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+create a command according to the given {\ttfamily name} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\+\_\+name} & command name \\
+\hline
+{\em para} & command parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommandFactory_a0a17b908385bd5087bd1cb45ae6b0639}\label{classCommandFactory_a0a17b908385bd5087bd1cb45ae6b0639}} 
+\index{Command\+Factory@{Command\+Factory}!Register@{Register}}
+\index{Register@{Register}!Command\+Factory@{Command\+Factory}}
+\subsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily static bool Command\+Factory\+::\+Register (\begin{DoxyParamCaption}\item[{const string \&}]{cmd\+\_\+name,  }\item[{Create\+Function \&\&}]{create\+\_\+func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Register a command, every command should call this function before program starts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\+\_\+name} & name of the command, must be unique in a process space \\
+\hline
+{\em create\+\_\+func} & function to create a cmd \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if succeed, else false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/websocket\+\_\+server/cmd\+\_\+factory.\+h\item 
+src/websocket\+\_\+server/cmd\+\_\+factory.\+cpp\end{DoxyCompactItemize}

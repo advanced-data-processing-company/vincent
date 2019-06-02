@@ -1,0 +1,56 @@
+\hypertarget{classICommand}{}\section{I\+Command Class Reference}
+\label{classICommand}\index{I\+Command@{I\+Command}}
+
+
+Inheritance diagram for I\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classICommand__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classICommand_aededc038ba0930a4ae3cad96aa92785e}\label{classICommand_aededc038ba0930a4ae3cad96aa92785e}} 
+{\bfseries I\+Command} (vector$<$ string $>$ \&\&cmd\+\_\+para)
+\item 
+\mbox{\Hypertarget{classICommand_ad1f533ad87b90bf6aa322d141126441f}\label{classICommand_ad1f533ad87b90bf6aa322d141126441f}} 
+virtual string \hyperlink{classICommand_ad1f533ad87b90bf6aa322d141126441f}{Execute} ()=0
+\begin{DoxyCompactList}\small\item\em Execute command. \end{DoxyCompactList}\item 
+virtual const string \& \hyperlink{classICommand_aebdd4993acbba78855f1ace503786dfc}{Name} ()=0
+\begin{DoxyCompactList}\small\item\em Name of the command, must be unique in the whole program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classICommand_a508aec4ae133993ea6fe37dae4aa221a}\label{classICommand_a508aec4ae133993ea6fe37dae4aa221a}} 
+int {\bfseries cmd\+\_\+argc\+\_\+} \{0\}
+\item 
+\mbox{\Hypertarget{classICommand_a63dd8353c35720cc5ef5689e2938b96c}\label{classICommand_a63dd8353c35720cc5ef5689e2938b96c}} 
+char $\ast$$\ast$ {\bfseries cmd\+\_\+argv\+\_\+} \{nullptr\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classICommand_aebdd4993acbba78855f1ace503786dfc}\label{classICommand_aebdd4993acbba78855f1ace503786dfc}} 
+\index{I\+Command@{I\+Command}!Name@{Name}}
+\index{Name@{Name}!I\+Command@{I\+Command}}
+\subsubsection{\texorpdfstring{Name()}{Name()}}
+{\footnotesize\ttfamily virtual const string\& I\+Command\+::\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Name of the command, must be unique in the whole program. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classLogCommand_aba05f5a8920ce0526d22ecfd93ea5060}{Log\+Command}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/websocket\+\_\+server/command.\+h\end{DoxyCompactItemize}

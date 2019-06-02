@@ -1,0 +1,81 @@
+\hypertarget{classwscmd_1_1ICommand}{}\section{wscmd\+:\+:I\+Command Class Reference}
+\label{classwscmd_1_1ICommand}\index{wscmd\+::\+I\+Command@{wscmd\+::\+I\+Command}}
+
+
+Commannd interface.  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+
+
+Inheritance diagram for wscmd\+:\+:I\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classwscmd_1_1ICommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for wscmd\+:\+:I\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classwscmd_1_1ICommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwscmd_1_1ICommand_ab4768937ccb18cc24d8da7ad91da442a}\label{classwscmd_1_1ICommand_ab4768937ccb18cc24d8da7ad91da442a}} 
+{\bfseries I\+Command} (vector$<$ string $>$ \&\&cmd\+\_\+para)
+\item 
+\mbox{\Hypertarget{classwscmd_1_1ICommand_a9f4adb20beb9c577e1da6a8ef9a4ca43}\label{classwscmd_1_1ICommand_a9f4adb20beb9c577e1da6a8ef9a4ca43}} 
+virtual string \hyperlink{classwscmd_1_1ICommand_a9f4adb20beb9c577e1da6a8ef9a4ca43}{Execute} ()=0
+\begin{DoxyCompactList}\small\item\em Execute command. \end{DoxyCompactList}\item 
+virtual const string \& \hyperlink{classwscmd_1_1ICommand_a1a9fdc32265fa902cb5f3ab153386a9e}{Name} ()=0
+\begin{DoxyCompactList}\small\item\em Name of the command, must be unique in the whole program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwscmd_1_1ICommand_ad8ebb0beab8997eebf9538d2bb9bb9dd}\label{classwscmd_1_1ICommand_ad8ebb0beab8997eebf9538d2bb9bb9dd}} 
+vector$<$ string $>$ {\bfseries cmd\+\_\+para\+\_\+}
+\item 
+\mbox{\Hypertarget{classwscmd_1_1ICommand_a82221aa31e2f2c1ab2b5fdaf082c4faa}\label{classwscmd_1_1ICommand_a82221aa31e2f2c1ab2b5fdaf082c4faa}} 
+int {\bfseries cmd\+\_\+argc\+\_\+} \{0\}
+\item 
+\mbox{\Hypertarget{classwscmd_1_1ICommand_ab18e734b8f8ff025caa26bd441580243}\label{classwscmd_1_1ICommand_ab18e734b8f8ff025caa26bd441580243}} 
+char $\ast$$\ast$ {\bfseries cmd\+\_\+argv\+\_\+} \{nullptr\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Commannd interface. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classwscmd_1_1ICommand_a1a9fdc32265fa902cb5f3ab153386a9e}\label{classwscmd_1_1ICommand_a1a9fdc32265fa902cb5f3ab153386a9e}} 
+\index{wscmd\+::\+I\+Command@{wscmd\+::\+I\+Command}!Name@{Name}}
+\index{Name@{Name}!wscmd\+::\+I\+Command@{wscmd\+::\+I\+Command}}
+\subsubsection{\texorpdfstring{Name()}{Name()}}
+{\footnotesize\ttfamily virtual const string\& wscmd\+::\+I\+Command\+::\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Name of the command, must be unique in the whole program. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classwscmd_1_1LogCommand_a465f14b51110d3f0a7d5fe873bafd857}{wscmd\+::\+Log\+Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/websocket\+\_\+server/command.\+h\item 
+src/websocket\+\_\+server/command.\+cpp\end{DoxyCompactItemize}

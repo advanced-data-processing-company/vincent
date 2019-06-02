@@ -1,0 +1,91 @@
+\hypertarget{classwscmd_1_1CommandFactory}{}\section{wscmd\+:\+:Command\+Factory Class Reference}
+\label{classwscmd_1_1CommandFactory}\index{wscmd\+::\+Command\+Factory@{wscmd\+::\+Command\+Factory}}
+
+
+factory to create command, user of command should use this factory instead of direct new/delete  
+
+
+
+
+{\ttfamily \#include $<$cmd\+\_\+factory.\+h$>$}
+
+
+
+Collaboration diagram for wscmd\+:\+:Command\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{classwscmd_1_1CommandFactory__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwscmd_1_1CommandFactory_ab6367255c34f4fd923576469acd58c56}\label{classwscmd_1_1CommandFactory_ab6367255c34f4fd923576469acd58c56}} 
+using {\bfseries Create\+Function} = Cmd\+Ptr($\ast$)(vector$<$ string $>$ \&\&cmdpara)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Cmd\+Ptr \hyperlink{classwscmd_1_1CommandFactory_a3a2ff622076f7ed51fa44de220f61276}{Create\+Cmd} (const string \&cmd\+\_\+string)
+\begin{DoxyCompactList}\small\item\em create a command according to the given {\ttfamily name} \end{DoxyCompactList}\item 
+static bool \hyperlink{classwscmd_1_1CommandFactory_a3d750b11a80519e15f7e2efbc1f60528}{Register} (const string \&cmd\+\_\+name, Create\+Function \&\&create\+\_\+func)
+\begin{DoxyCompactList}\small\item\em Register a command, every command should call this function before program starts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwscmd_1_1CommandFactory_a036760d988f21733db305c1777cb08a3}\label{classwscmd_1_1CommandFactory_a036760d988f21733db305c1777cb08a3}} 
+static map$<$ string, Create\+Function $>$ {\bfseries cmd\+\_\+create\+\_\+map\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+factory to create command, user of command should use this factory instead of direct new/delete 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classwscmd_1_1CommandFactory_a3a2ff622076f7ed51fa44de220f61276}\label{classwscmd_1_1CommandFactory_a3a2ff622076f7ed51fa44de220f61276}} 
+\index{wscmd\+::\+Command\+Factory@{wscmd\+::\+Command\+Factory}!Create\+Cmd@{Create\+Cmd}}
+\index{Create\+Cmd@{Create\+Cmd}!wscmd\+::\+Command\+Factory@{wscmd\+::\+Command\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Cmd()}{CreateCmd()}}
+{\footnotesize\ttfamily Cmd\+Ptr wscmd\+::\+Command\+Factory\+::\+Create\+Cmd (\begin{DoxyParamCaption}\item[{const string \&}]{cmd\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+create a command according to the given {\ttfamily name} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\+\_\+name} & command name \\
+\hline
+{\em para} & command parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwscmd_1_1CommandFactory_a3d750b11a80519e15f7e2efbc1f60528}\label{classwscmd_1_1CommandFactory_a3d750b11a80519e15f7e2efbc1f60528}} 
+\index{wscmd\+::\+Command\+Factory@{wscmd\+::\+Command\+Factory}!Register@{Register}}
+\index{Register@{Register}!wscmd\+::\+Command\+Factory@{wscmd\+::\+Command\+Factory}}
+\subsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily bool wscmd\+::\+Command\+Factory\+::\+Register (\begin{DoxyParamCaption}\item[{const string \&}]{cmd\+\_\+name,  }\item[{Create\+Function \&\&}]{create\+\_\+func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Register a command, every command should call this function before program starts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\+\_\+name} & name of the command, must be unique in a process space \\
+\hline
+{\em create\+\_\+func} & function to create a cmd \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if succeed, else false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/websocket\+\_\+server/cmd\+\_\+factory.\+h\item 
+src/websocket\+\_\+server/cmd\+\_\+factory.\+cpp\end{DoxyCompactItemize}

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['getbool',['GetBool',['../classadpc_1_1Config.html#a42a33471c732cd4960e5fb3e00e3b433',1,'adpc::Config']]],
-  ['getint',['GetInt',['../classadpc_1_1Config.html#a8153d1c7be58fa8ce1a6c768bd65ea94',1,'adpc::Config']]],
-  ['getstring',['GetString',['../classadpc_1_1Config.html#aeb4893a500149d3ae44614767e496132',1,'adpc::Config']]]
+  ['execute',['Execute',['../classwscmd_1_1ICommand.html#a9f4adb20beb9c577e1da6a8ef9a4ca43',1,'wscmd::ICommand::Execute()'],['../classwscmd_1_1LogCommand.html#a9ef233e03aa8736cd9578ba015161efb',1,'wscmd::LogCommand::Execute()']]]
 ];
