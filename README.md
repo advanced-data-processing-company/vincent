@@ -21,8 +21,6 @@
 
 All source files are in `src` directory, each module has its own sub-directory in `src`
 
-## Mark down guide 
-This is the *[Markdown Guide](https://www.markdownguide.org)*.
 
 ## Build
 
@@ -183,12 +181,4 @@ add_test(config ${EXECUTABLE_OUTPUT_PATH}/config_test)
 # link to lib
 target_link_libraries(config_test config)
 ```
-## Useful git commands
-``` shell
-git status
-git add <filename>
-git commit -m "Commit message"
-git config --global user.name "Sam Smith"
-git config --global user.email sam@example.com
-```
-- [basic git commands](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)
+
