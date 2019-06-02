@@ -1,7 +1,7 @@
 #include "log/log.h"
 #include "common/os.h"
 
-#include "mutex"
+#include <mutex>
 
 namespace adpc {
 
@@ -51,6 +51,27 @@ size_t Log::AddModule(string &&module_name, const LogLevel level, const bool ter
 
     logs_.push_back(std::move(log));
     return logs_.size() - 1;
+}
+
+void Log::Print() const {
+    logs_[0]->debug(print_to_string_stream().str());
+}
+
+string Log::PrintToString() const {
+    return print_to_string_stream().str();
+}
+
+stringstream Log::print_to_string_stream() const {
+    stringstream ss;
+    ss << "============================\n";
+    for (size_t i = 0; i < logs_.size(); ++i) {
+        ss << "[" << logs_[i]->name() << "]"
+           << " [" << i << "]"
+           << " [" << logs_[i]->level() << "]";
+    }
+    ss << "\n============================";
+
+    return ss;
 }
 
 }  // namespace adpc

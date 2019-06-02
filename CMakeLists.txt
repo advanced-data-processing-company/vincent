@@ -12,14 +12,17 @@ set(CXX_VERSION "-std=c++17")
 # other common compile falgs
 set(OTHER_COMPILE_FLAGS "-fexceptions")
 
-# common c++ compile flags
-set(CMAKE_CXX_FLAGS "${WARNING} ${OTHER_COMPILE_FLAGS} ${CXX_VERSION}")
+# default c++ compile flags
+set(COMMON_COMPILE_FLAGS "${WARNING} ${OTHER_COMPILE_FLAGS} ${CXX_VERSION}")
 
 # debug compile flags
-set(CMAKE_CXX_FLAGS_DEBUG   "-g -O0 ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS_DEBUG   "-g -O0 ${COMMON_COMPILE_FLAGS}")
 
 # release compile flags
-set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -O2 ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -O2 ${COMMON_COMPILE_FLAGS}")
+
+# default c++ compile flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_DEBUG}")
 
 # print compile flags
 if("${CMAKE_BUILD_TYPE}" STREQUAL Debug)
@@ -27,7 +30,7 @@ if("${CMAKE_BUILD_TYPE}" STREQUAL Debug)
 elseif("${CMAKE_BUILD_TYPE}" STREQUAL Release)
   message("release compile flags: ${CMAKE_CXX_FLAGS_RELEASE}")
 else()
-  message("common compile flags: ${CMAKE_CXX_FLAGS}")
+  message("default to debug compile flags: ${CMAKE_CXX_FLAGS}")
 endif()
 
 # make sure `make` can print verbose compile info

@@ -1,0 +1,79 @@
+\hypertarget{classLogCommand}{}\section{Log\+Command Class Reference}
+\label{classLogCommand}\index{Log\+Command@{Log\+Command}}
+
+
+Inheritance diagram for Log\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classLogCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Log\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classLogCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLogCommand_a2b6f7d4d317d63985e503a42f500424d}\label{classLogCommand_a2b6f7d4d317d63985e503a42f500424d}} 
+{\bfseries Log\+Command} (vector$<$ string $>$ \&\&cmd\+\_\+para)
+\item 
+\mbox{\Hypertarget{classLogCommand_aa7727d96ced7972072d105753189496b}\label{classLogCommand_aa7727d96ced7972072d105753189496b}} 
+string \hyperlink{classLogCommand_aa7727d96ced7972072d105753189496b}{Execute} () override
+\begin{DoxyCompactList}\small\item\em Execute command. \end{DoxyCompactList}\item 
+const string \& \hyperlink{classLogCommand_aba05f5a8920ce0526d22ecfd93ea5060}{Name} () override
+\begin{DoxyCompactList}\small\item\em Name of the command, must be unique in the whole program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLogCommand_a3138e2c479ca4784e830495f7ac7ddb5}\label{classLogCommand_a3138e2c479ca4784e830495f7ac7ddb5}} 
+static Cmd\+Ptr {\bfseries Create} (vector$<$ string $>$ \&\&cmd\+\_\+para)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLogCommand_ae685ab0c3bf8b85a8a7b1ad570a1df7d}\label{classLogCommand_ae685ab0c3bf8b85a8a7b1ad570a1df7d}} 
+size\+\_\+t {\bfseries module\+\_\+} \{0\}
+\item 
+\mbox{\Hypertarget{classLogCommand_aac97a104558320e9eb3e33d3ceee6663}\label{classLogCommand_aac97a104558320e9eb3e33d3ceee6663}} 
+size\+\_\+t {\bfseries level\+\_\+} \{0\}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLogCommand_a492977195c70debf93aa962c69855db8}\label{classLogCommand_a492977195c70debf93aa962c69855db8}} 
+static bool {\bfseries is\+\_\+registered\+\_\+} = \hyperlink{classCommandFactory_a0a17b908385bd5087bd1cb45ae6b0639}{Command\+Factory\+::\+Register}(\char`\"{}log\char`\"{}, Log\+Command\+::\+Create)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLogCommand_aba05f5a8920ce0526d22ecfd93ea5060}\label{classLogCommand_aba05f5a8920ce0526d22ecfd93ea5060}} 
+\index{Log\+Command@{Log\+Command}!Name@{Name}}
+\index{Name@{Name}!Log\+Command@{Log\+Command}}
+\subsubsection{\texorpdfstring{Name()}{Name()}}
+{\footnotesize\ttfamily const string\& Log\+Command\+::\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Name of the command, must be unique in the whole program. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classICommand_aebdd4993acbba78855f1ace503786dfc}{I\+Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/websocket\+\_\+server/log\+\_\+cmd.\+h\item 
+src/websocket\+\_\+server/log\+\_\+cmd.\+cpp\end{DoxyCompactItemize}
