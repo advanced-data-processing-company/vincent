@@ -5,7 +5,9 @@ file(GLOB LIB_SRC
 file(GLOB TEST_SRC
     "*test.cpp")
 
-list(REMOVE_ITEM LIB_SRC ${TEST_SRC}})
+message("common")
+message("lib source is:${LIB_SRC}")
+message("test source is ${TEST_SRC}")
 
 # add library
 add_library(common ${LIB_SRC})
