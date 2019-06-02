@@ -24,6 +24,7 @@
 #include <atomic>  // for thread save write to bool
 #include <map>
 #include <memory>  // for smart pointer
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -36,6 +37,7 @@ namespace adpc {
 using std::map;
 using std::shared_ptr;
 using std::string;
+using std::stringstream;
 using std::unique_ptr;
 using std::vector;
 
@@ -97,9 +99,18 @@ class Log {
     size_t AddModule(string &&module_name, const LogLevel level = LogLevel::kwarn,
                      const bool terminal = true, const bool daily_file = true);
 
+    /**
+     * @brief Print log information
+     */
+    void Print() const;
+
+    string PrintToString() const;
+
    private:
     Log();
     ~Log() = default;
+
+    stringstream print_to_string_stream() const;
 
    private:
     using logPtr = unique_ptr<spdlog::logger>;
