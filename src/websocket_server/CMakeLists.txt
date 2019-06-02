@@ -7,10 +7,6 @@ file(GLOB TEST_SRC
 
 list(REMOVE_ITEM LIB_SRC ${TEST_SRC}})
 
-message("web_socket")
-message("lib source is:${LIB_SRC}")
-message("test source is ${TEST_SRC}")
-
 # add library
 add_library(ws_server ${LIB_SRC})
 

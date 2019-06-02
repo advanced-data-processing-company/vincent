@@ -6,6 +6,11 @@ project(vincent)
 # all warning message specified here will not be allowed in code
 set(WARNING "-Wall -Werror -Wpedantic -Wextra -Wconversion -Wshadow=local")
 
+if(CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 7.0)
+set(WARNING "${WARNING} -Wshadow=local")
+message("g++ version greater than 7.0 use -Wshadow=local")
+endif()
+
 # c++ version
 set(CXX_VERSION "-std=c++17")
 
