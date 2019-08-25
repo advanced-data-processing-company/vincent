@@ -8,3 +8,7 @@ file(GLOB HTTP_SRC
 
 message(${HTTP_SRC})
 add_executable(http ${HTTP_SRC})
+link_directories(/usr/local/lib)
+target_link_libraries(http
+    curl
+    )

@@ -6,7 +6,7 @@ file(GLOB TEST_SRC
     "*test.cpp")
 
 list(REMOVE_ITEM LIB_SRC ${TEST_SRC}})
-
+set(CXX_VERSION "-std=c++17")
 # add library
 add_library(log ${LIB_SRC})
 
