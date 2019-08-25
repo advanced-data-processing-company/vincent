@@ -2,6 +2,7 @@
 #define HTTP_H
 #include "3rdparty/include/http_parser/http_parser.c"
 #include "config/config.h"
+#include "log/log.h"
 #include <curl/curl.h>
 #include <curl/easy.h>
 namespace adpc {

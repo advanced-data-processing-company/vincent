@@ -4,7 +4,6 @@ namespace adpc {
 http::http() : curl(nullptr) { curl = curl_easy_init(); }
 http::~http() { curl_easy_cleanup(curl); }
 
-/* Auxiliary function that waits on the socket. */
 static int wait_on_socket(curl_socket_t sockfd, int for_recv, long timeout_ms) {
   struct timeval tv;
   fd_set infd, outfd, errfd;
@@ -63,14 +62,13 @@ bool http::sendRequestByCurl(const char *request) {
       nsent_total += nsent;
 
       if (res == CURLE_AGAIN && !wait_on_socket(sockfd, 0, 60000L)) {
-        printf("Error: timeout.\n");
-        return 1;
+        return false;
       }
     } while (res == CURLE_AGAIN);
 
     if (res != CURLE_OK) {
       printf("Error: %s\n", curl_easy_strerror(res));
-      return 1;
+      return false;
     }
 
     printf("Sent %" CURL_FORMAT_CURL_OFF_T " bytes.\n", (curl_off_t)nsent);
@@ -108,7 +106,6 @@ bool http::recvDataByCurl() {
   printf("Reading response.\n");
 
   for (;;) {
-    /* Warning: This example program may loop indefinitely (see above). */
 
     size_t nread;
     do {
