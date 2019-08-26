@@ -15,8 +15,8 @@ TEST_CASE("global log") {
   }
 
   SUBCASE("error log") {
-    LOG.err(0, __FILE__, __LINE__, __FUNCTION__, "level of error log is {}",
-            LogLevel::kerr);
+    LOG.err(0, __FILE__, __LINE__, __FUNCTION__, "level of error log is",
+            "err");
     CHECK(true);
   }
 
@@ -27,7 +27,7 @@ TEST_CASE("global log") {
 
   SUBCASE("info log") {
     LOG.info(0, __FILE__, __LINE__, __FUNCTION__, "level of info log is %d",
-             LogLevel::kinfo);
+             "info");
     CHECK(true);
   }
 
@@ -53,7 +53,7 @@ TEST_CASE("module log") {
 
   SUBCASE("error log") {
     LOG.err(module, __FILE__, __LINE__, __FUNCTION__,
-            "level of error log is {}", LogLevel::kerr);
+            "level of error log is {}", "err");
     CHECK(true);
   }
 
@@ -65,7 +65,7 @@ TEST_CASE("module log") {
 
   SUBCASE("info log") {
     LOG.info(module, __FILE__, __LINE__, __FUNCTION__,
-             "level of info log is %d", LogLevel::kinfo);
+             "level of info log is %d", "info");
     CHECK(true);
   }
 
@@ -101,7 +101,7 @@ TEST_CASE("use macro") {
   }
 
   SUBCASE("error log") {
-    ERRLOG("level of error log is {}", LogLevel::kerr);
+    ERRLOG("level of error log is {}", "err");
     CHECK(true);
   }
 
@@ -112,7 +112,7 @@ TEST_CASE("use macro") {
   }
 
   SUBCASE("info log") {
-    INFOLOG("level of info log is %d", LogLevel::kinfo);
+    INFOLOG("level of info log is %d", 1);
     CHECK(true);
   }
 }
