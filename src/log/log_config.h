@@ -18,11 +18,11 @@ namespace adpc {
 // forward declaration
 class Log;
 
-enum class LogSinkType { kdaily_file, kterminal };
+enum LogSinkType { kdaily_file, kterminal };
 
 /// copy from spdlog::level::level_enum
 /// log level
-enum class LogLevel {
+enum LogLevel {
   ktrace = SPDLOG_LEVEL_TRACE,
   kdebug = SPDLOG_LEVEL_DEBUG,
   kinfo = SPDLOG_LEVEL_INFO,
@@ -38,8 +38,8 @@ class LogConfiguration {
   // configuration per sink
   bool termial_enabled_{true};
   bool daily_file_enabled_{true};
-  LogLevel daily_file_level_{LogLevel::kinfo};
-  LogLevel terminal_level_{LogLevel::kwarn};
+  LogLevel daily_file_level_{kinfo};
+  LogLevel terminal_level_{kwarn};
   size_t id_{0}; // 0 for invalid
 };
 
