@@ -34,7 +34,7 @@ LINK_DIRECTORIES("${EXTERNAL_LIBRARY_PATH}/lib")
 
 add_subdirectory(app)
 
-#add_subdirectory(proto)
+add_subdirectory(proto)
 add_subdirectory(log)
 add_subdirectory(config)
 add_subdirectory(common)
