@@ -4,7 +4,7 @@ project(vincent)
 
 # warning flags
 # all warning message specified here will not be allowed in code
-set(WARNING "-Wall -Werror -Wpedantic -Wextra -Wconversion -Wshadow=local")
+set(WARNING "-Wall -Werror -Wpedantic -Wextra -Wconversion")
 
 if(CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 7.0)
 set(WARNING "${WARNING} -Wshadow=local")
