@@ -34,14 +34,6 @@ file(GLOB proto_def
 file(GLOB test_src
     "*.cpp")
 
-file(GLOB test_src
-    "*.pb.cc")
-
-file(GLOB test_src
-    "*.pb.h")
-SET (CMAKE_C_FLAGS "-nostartfiles")
-SET (CMAKE_CXX_FLAGS "-nostartfiles")
-SET (CMAKE_EXE_LINKER_FLAGS "-nostartfiles")
 PROTOBUF_GENERATE_CPP(PROTO_SRC PROTO_HEADER ${proto_def})
 
 # add library
