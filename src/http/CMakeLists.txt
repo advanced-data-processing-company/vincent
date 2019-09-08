@@ -15,7 +15,7 @@ message("----" ${LIB_SRC})
 add_executable(clientinterface_test ${TEST_SRC}
     )
 
-add_test(http ${EXECUTABLE_OUTPUT_PATH}/http_test)
+add_test(http ${EXECUTABLE_OUTPUT_PATH}/clientinterface_test)
 
 # link to lib
 target_link_libraries(clientinterface_test http common http_parser)
