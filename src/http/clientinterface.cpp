@@ -1,7 +1,5 @@
 #include "clientinterface.h"
 
-using namespace rapidjson;
-using namespace adpc;
 ClientInterface::ClientInterface() {
   pi.RegisterOnUrl(&on_url);
   pi.RegisterOnMessageBegin(&on_message_begin);
@@ -11,9 +9,7 @@ ClientInterface::ClientInterface() {
 
 bool ClientInterface::ConnectHttpServer(const JSON_STRING &configure) {
 
-  Document d;
-  d.Parse(configure.c_str());
-
+  printf("%s", configure.c_str());
   return false;
 }
 

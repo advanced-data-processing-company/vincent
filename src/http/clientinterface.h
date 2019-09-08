@@ -4,9 +4,6 @@
 #pragma once
 #include "http_parser/http_parser.h"
 #include "http_parser/parserinterface.h"
-#include "log/log.h"
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
 #include <string>
 
 using std::string;
@@ -15,7 +12,6 @@ typedef std::string JSON_STRING;
 enum class HTTP_CODE { HTTP_OK = 200, HTTP_NOT_FOUND = 404 };
 enum class REQ_METHOD { CREATE, RETRIVE, UPDATE, DELETE };
 
-namespace adpc {
 class ClientInterface {
 
   // friend adpctl::Singleton<ClientInterface>;
@@ -42,9 +38,9 @@ private:
   ParserInterface pi;
 };
 
-//#define LOG adpctl::Singleton<adpc::ClientInterface>::GetInstance()
+//#define CLIENT_INTERFACE
+// adpctl::Singleton<adpc::ClientInterface>::GetInstance()
 
-} // namespace adpc
 int on_message_begin(http_parser *parser);
 int on_headers_complete(http_parser *parser);
 

@@ -1,8 +1,7 @@
 #include "clientinterface.h"
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest/doctest.h"
-using namespace adpc;
+#include "../3rdparty/include/doctest/doctest.h"
 /*
  *
  * Request URL:
