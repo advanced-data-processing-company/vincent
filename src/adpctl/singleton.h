@@ -1,11 +1,11 @@
+#pragma once
+
 /**
  * @brief Advanced Data Processing Company Template Library(ADPCTL)
  *
  * adpctl is a template library designed for purpose use
  *
  */
-
-#pragma once
 
 /**
  * Singleton template

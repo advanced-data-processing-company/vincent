@@ -11,6 +11,9 @@ set(WARNING "${WARNING} -Wshadow=local")
 message("g++ version greater than 7.0 use -Wshadow=local")
 endif()
 
+# generate compile commands
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # c++ version
 set(CXX_VERSION "-std=c++17")
 
